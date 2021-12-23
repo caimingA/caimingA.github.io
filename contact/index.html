@@ -374,6 +374,7 @@
     p.float{
         text-align: center;
     }
+
 </style>
 <main class="content">
     <div id="contact" class="container chip-container">
@@ -392,8 +393,6 @@
                     <b>友链信息</b><br>
                     <b>博客名称: CM's SPACE</b><br>
                     <b>博客网址: http://caiminga.github.io</b><br>
-                    <!-- <b>博客头像: http://caiminga.github.io/medias/logo.png</b><br> -->
-                    <!-- <b>博客介绍: CAIMing's SPACE</b><br> -->
                     <b>微信: CCCMing106</b><br>
                     <b>QQ: 2084859617</b><br>
                 </p>
@@ -462,7 +461,7 @@
                         let info = $('input[name=info]').val();
                         (info === '' ) ?  info='hello world' : info=info;
                         let href = $('input[name=href]').val();
-                        (href === '' ) ?  href='https://www.bilibili.com/;
+                        (href === '' ) ?  href='https://github.com/blinkfox/hexo-theme-matery' : href=href;
                         let speed = parseInt($('input[name=speed]').val());
                         if(speed > 20 || speed < 5)
                             speed = Math.floor(Math.random() * 10) + 5;
@@ -766,6 +765,8 @@
 
 
             
+    
+    
 
             
 
