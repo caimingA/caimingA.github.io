@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>矩阵求导相关结论</title>
+      <link href="/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/"/>
+      <url>/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/</url>
+      
+        <content type="html"><![CDATA[<p>在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重$w=(X^{T}X)^{-1}X^{T}y$。其中$X$为输入数据或者说明变量，$y$是输出结果或者被说明变量。需要注意的是，最小二乘是凸函数。为了求出最小二乘的极值，可以进行求导并找到导数为零的点。</p><p><br></p><p>这里记录一些矩阵求导的结论。未来可能会做严格推导。</p><ol><li>对矩阵和向量求导时，目标项有几个就需要求导几次。</li><li>微分的分子分母相等时，目标矩阵或者向量转置，其他的变量与转置后的目标的相对为止不变。</li><li>微分的分子分母互为转置时，目标不变，其他变量相对目标进行为止交换。</li></ol><p>接下来举几个例子。<br></p><script type="math/tex; mode=display">\frac{\partial (x^{T}a)}{\partial x}=\frac{\partial (a^{T}x)}{\partial x}</script><p><br></p><script type="math/tex; mode=display">\frac{\partial (x^{T}x)}{\partial x}=2x</script><p><br></p><script type="math/tex; mode=display">\frac{\partial (x^{T}Ax)}{\partial x}=Ax + A^{T}x</script><p><br></p><script type="math/tex; mode=display">\frac{\partial (a^{T}xx^{T}b)}{\partial x}=ab^{T}x+ba^{T}x</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>monte carlo</title>
       <link href="/2022/06/18/monte-carlo/"/>
       <url>/2022/06/18/monte-carlo/</url>

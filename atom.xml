@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2022-06-17T22:13:46.071Z</updated>
+  <updated>2022-06-17T23:07:38.825Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>矩阵求导相关结论</title>
+    <link href="http://caiminga.github.io/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/"/>
+    <id>http://caiminga.github.io/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/</id>
+    <published>2022-06-17T22:16:33.000Z</published>
+    <updated>2022-06-17T23:07:38.825Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重$w=(X^{T}X)^{-1}X^{T}y$。其中$X$为输入数据或者说明变量，$y$是输出结果或者被说明变量。需要注意的是，最小二乘是凸函数。为了求出最小二乘的极值，可以进行求导并找到导</summary>
+        
+      
+    
+    
+    
+    <category term="math basic" scheme="http://caiminga.github.io/categories/math-basic/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+  </entry>
   
   <entry>
     <title>monte carlo</title>

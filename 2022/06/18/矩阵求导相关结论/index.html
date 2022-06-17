@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="monte carlo, CM&#39;s SPACE">
-    <meta name="description" content="简述蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。与大数定律和中心极限定理有一定的相似之处。
-另外蒙特卡罗并不是人的名字，而是位于摩纳哥的一个赌场的名字。
-简单的例子最经典的例子应该是几何概型中的算$\pi$的数值。也就是高中课">
+    <meta name="keywords" content="矩阵求导相关结论, CM&#39;s SPACE">
+    <meta name="description" content="在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重$w=(X^{T}X)^{-1}X^{T}y$。其中$X$为输入数据或者说明变量，$y$是输出结果或者被说明变量。需要注意的是，最小二乘是凸函数。为了求出最">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>monte carlo | CM&#39;s SPACE</title>
+    <title>矩阵求导相关结论 | CM&#39;s SPACE</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">monte carlo</h1>
+                    <h1 class="description center-align post-title">矩阵求导相关结论</h1>
                 </div>
             </div>
         </div>
@@ -437,14 +435,6 @@
                                 <span class="chip bg-color">math</span>
                             </a>
                         
-                            <a href="/tags/RL/">
-                                <span class="chip bg-color">RL</span>
-                            </a>
-                        
-                            <a href="/tags/ML/">
-                                <span class="chip bg-color">ML</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -490,43 +480,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。与大数定律和中心极限定理有一定的相似之处。<br></p>
-<p>另外蒙特卡罗并不是人的名字，而是位于摩纳哥的一个赌场的名字。</p>
-<h2 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h2><p>最经典的例子应该是几何概型中的算$\pi$的数值。也就是高中课本上的撒豆子问题。<br></p>
-<p>通过多次随机取样，取样点会随机分布在一个正方形的区域里，然后在该区域中画圆，就会是样本分成两部分。一部分在圆内，另一部分在圆外。然后通过算圆内的样本数占总样本数的比例可以近似算的圆的面积，最后通过圆面积公式能算得$\pi$的取值。</p>
-<h3 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h3><blockquote>
-<script type="math/tex; mode=display">
-\frac{1}{4}S =\frac{1}{4}\pi R^{2} = \frac{n}{N} \\ n:圆内区域的样本数 \\ N:样本总数</script></blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
-
-sampleNum <span class="token operator">=</span> <span class="token number">10000</span>
-counter <span class="token operator">=</span> <span class="token number">0</span>
-plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-x1 <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-y1 <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-x2 <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-y2 <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>sampleNum<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    x <span class="token operator">=</span> random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    y <span class="token operator">=</span> random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> y<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
-        counter <span class="token operator">+=</span> <span class="token number">1</span>
-        x1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-        y1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        x2<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-        y2<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
-   
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token operator">*</span>counter<span class="token operator">/</span>sampleNum<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x2<span class="token punctuation">,</span> y2<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">)</span>
-
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/2022/06/18/monte-carlo/20220618_01.png" alt="fig1 例子"></p>
+                <p>在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重$w=(X^{T}X)^{-1}X^{T}y$。其中$X$为输入数据或者说明变量，$y$是输出结果或者被说明变量。需要注意的是，最小二乘是凸函数。为了求出最小二乘的极值，可以进行求导并找到导数为零的点。</p>
 <p><br></p>
-<p>随着$sampleNum$的增大，最终结果应该会越来越接近3.14。</p>
-
+<p>这里记录一些矩阵求导的结论。未来可能会做严格推导。</p>
+<ol>
+<li>对矩阵和向量求导时，目标项有几个就需要求导几次。</li>
+<li>微分的分子分母相等时，目标矩阵或者向量转置，其他的变量与转置后的目标的相对为止不变。</li>
+<li>微分的分子分母互为转置时，目标不变，其他变量相对目标进行为止交换。</li>
+</ol>
+<p>接下来举几个例子。<br></p>
+<script type="math/tex; mode=display">
+\frac{\partial (x^{T}a)}{\partial x}=\frac{\partial (a^{T}x)}{\partial x}</script><p><br></p>
+<script type="math/tex; mode=display">
+\frac{\partial (x^{T}x)}{\partial x}=2x</script><p><br></p>
+<script type="math/tex; mode=display">
+\frac{\partial (x^{T}Ax)}{\partial x}=Ax + A^{T}x</script><p><br></p>
+<script type="math/tex; mode=display">
+\frac{\partial (a^{T}xx^{T}b)}{\partial x}=ab^{T}x+ba^{T}x</script>
                 
             </div>
             <hr/>
@@ -552,7 +522,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://caiminga.github.io/2022/06/18/monte-carlo/">http://caiminga.github.io/2022/06/18/monte-carlo/</a>
+                    <a href="http://caiminga.github.io/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/">http://caiminga.github.io/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -592,14 +562,6 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                             
                                 <a href="/tags/math/">
                                     <span class="chip bg-color">math</span>
-                                </a>
-                            
-                                <a href="/tags/RL/">
-                                    <span class="chip bg-color">RL</span>
-                                </a>
-                            
-                                <a href="/tags/ML/">
-                                    <span class="chip bg-color">ML</span>
                                 </a>
                             
                         </div>
@@ -1037,9 +999,10 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/">
                     <div class="card-image">
@@ -1057,9 +1020,59 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-18
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/math-basic/" class="post-category">
+                                    math basic
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/math/">
+                        <span class="chip bg-color">math</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/18/monte-carlo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="monte carlo">
+                        
+                        <span class="card-title">monte carlo</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1079,53 +1092,12 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         <span class="chip bg-color">math</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/12/23/first-article/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="first article">
-                        
-                        <span class="card-title">first article</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/other/" class="post-category">
-                                    other
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
+                    <a href="/tags/RL/">
+                        <span class="chip bg-color">RL</span>
+                    </a>
                     
-                    <a href="/tags/daily-life/">
-                        <span class="chip bg-color">daily life</span>
+                    <a href="/tags/ML/">
+                        <span class="chip bg-color">ML</span>
                     </a>
                     
                 </div>
