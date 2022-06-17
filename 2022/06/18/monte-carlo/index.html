@@ -33,7 +33,7 @@
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CM's SPACE" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -425,7 +425,7 @@
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
         <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFunction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
@@ -506,6 +506,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -518,7 +521,32 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <h3 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h3><blockquote>
 <script type="math/tex; mode=display">
 \frac{1}{4}S =\frac{1}{4}\pi R^{2} = \frac{n}{N} \\ n:圆内区域的样本数 \\ N:样本总数</script></blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line"></span><br><span class="line">sampleNum = 10000</span><br><span class="line">counter = 0</span><br><span class="line">plt.figure(figsize=(8, 8))</span><br><span class="line"></span><br><span class="line">x1 = list()</span><br><span class="line">y1 = list()</span><br><span class="line">x2 = list()</span><br><span class="line">y2 = list()</span><br><span class="line">for i in range(sampleNum):</span><br><span class="line">    x = random.random()</span><br><span class="line">    y = random.random()</span><br><span class="line">    if x**2 + y**2 &lt; 1:</span><br><span class="line">        counter += 1</span><br><span class="line">        x1.append(x)</span><br><span class="line">        y1.append(y)</span><br><span class="line">    else:</span><br><span class="line">        x2.append(x)</span><br><span class="line">        y2.append(y)</span><br><span class="line">   </span><br><span class="line">print(4*counter/sampleNum)</span><br><span class="line">plt.scatter(x2, y2, color=&#x27;b&#x27;)</span><br><span class="line">plt.scatter(x1, y1, color=&#x27;r&#x27;)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">import random
+
+sampleNum &#x3D; 10000
+counter &#x3D; 0
+plt.figure(figsize&#x3D;(8, 8))
+
+x1 &#x3D; list()
+y1 &#x3D; list()
+x2 &#x3D; list()
+y2 &#x3D; list()
+for i in range(sampleNum):
+    x &#x3D; random.random()
+    y &#x3D; random.random()
+    if x**2 + y**2 &lt; 1:
+        counter +&#x3D; 1
+        x1.append(x)
+        y1.append(y)
+    else:
+        x2.append(x)
+        y2.append(y)
+   
+print(4*counter&#x2F;sampleNum)
+plt.scatter(x2, y2, color&#x3D;&#39;b&#39;)
+plt.scatter(x1, y1, color&#x3D;&#39;r&#39;)
+
+plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/2022/06/18/monte-carlo/20220618_01.png" alt="fig1 例子"></p>
 
                 
@@ -1561,25 +1589,9 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
      

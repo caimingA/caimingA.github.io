@@ -6,7 +6,7 @@ $(function () {
     $('.code-area').prepend($notice)
     // “复制成功”字出现
     function copy(text, ctx) {
-        if (window.getSelection && window.getSelection('copy')) {
+        if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
         // if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
             try {
                 document.execCommand('copy') // Security exception may be thrown by some browsers.
