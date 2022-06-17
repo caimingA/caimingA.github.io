@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2021-12-23T08:20:30.146Z</updated>
+  <updated>2022-06-17T16:28:42.745Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>monte carlo</title>
+    <link href="http://caiminga.github.io/2022/06/18/monte-carlo/"/>
+    <id>http://caiminga.github.io/2022/06/18/monte-carlo/</id>
+    <published>2022-06-17T15:16:08.000Z</published>
+    <updated>2022-06-17T16:28:42.745Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="math basic" scheme="http://caiminga.github.io/categories/math-basic/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="RL" scheme="http://caiminga.github.io/tags/RL/"/>
+    
+    <category term="ML" scheme="http://caiminga.github.io/tags/ML/"/>
+    
+  </entry>
   
   <entry>
     <title>first article</title>
