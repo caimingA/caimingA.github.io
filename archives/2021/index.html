@@ -39,21 +39,32 @@
     body{
        /* background-image: url(/medias/featureimages/); */
        /* 
-       
-       background-image: url(/medias/featureimages/21.jpg); */
+       /*  */
+       /* background-image: url(/medias/featureimages/41.jpg); */ */
        /* url_for(post.path) */
        background-repeat:no-repeat;
        background-size: 100% 100%;
+       /* background-size: cover; */
        background-attachment:fixed;
     }
+
+    .back{
+       background-image: url(/medias/featureimages/41.jpg);
+        background-repeat:no-repeat;
+       background-size: 100% 100%;
+       /* background-size: cover; */
+       background-attachment:fixed;
+    }
+
+
 </style>
 
 
 
-<body background="/medias/featureimages/21.jpg">
+<body>
+    <div class="back">
     
-    
-    <header class="navbar-fixed">
+        <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -322,7 +333,7 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
+        <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -504,7 +515,7 @@
 
 
 
-    <footer class="page-footer bg-color">
+        <footer class="page-footer bg-color">
     
 
     <div class="container row center-align"
@@ -580,7 +591,7 @@
 <div class="progress-bar"></div>
 
 
-    <!-- 搜索遮罩框 -->
+        <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -684,48 +695,48 @@ $(function () {
 });
 </script>
 
-    <!-- 回到顶部按钮 -->
+        <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fas fa-arrow-up"></i>
     </a>
 </div>
 
-    <!-- <script>
-        var myImage = document.createElement("img");
-        var figUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getHours()) % 101 + '.jpg';
-        myImage.src = figUrl;
-        // myImage.width = 300;
-        // myImage.height = 300;
-        document.body.appendChild(myImage);
-    </script> -->
+        <!-- <script>
+            var myImage = document.createElement("img");
+            var figUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getHours()) % 101 + '.jpg';
+            myImage.src = figUrl;
+            // myImage.width = 300;
+            // myImage.height = 300;
+            document.body.appendChild(myImage);
+        </script> -->
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+        <script src="/libs/aos/aos.js"></script>
+        <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+        <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
 
-    
+        
 
-    
+        
 
-    <!-- 雪花特效 -->
-    
+        <!-- 雪花特效 -->
+        
 
-    <!-- 鼠标星星特效 -->
-    
+        <!-- 鼠标星星特效 -->
+        
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
-    
+         
+            <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+            <script src="/libs/others/TencentCaptcha.js"></script>
+            <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+        
 
-    <!-- Baidu Analytics -->
+        <!-- Baidu Analytics -->
 
-    <!-- Baidu Push -->
+        <!-- Baidu Push -->
 
 <script>
     (function () {
@@ -741,27 +752,28 @@ $(function () {
     })();
 </script>
 
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
+        
+        
+        <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+        
 
-    
+        
 
-    
+        
 
-    <!--腾讯兔小巢-->
-    
-    
+        <!--腾讯兔小巢-->
+        
+        
 
-    
+        
 
-    
+        
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
+        
+        <script src="/libs/instantpage/instantpage.js" type="module"></script>
+        
 
+    </div>
 </body>
 
 </html>
