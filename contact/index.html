@@ -38,7 +38,7 @@
    <style>
     body{
        /* background-image: url(/medias/featureimages/); */
-       background-image: url(/medias/featureimages/12.jpg);
+       background-image: url(/medias/featureimages/34.jpg);
        /* url_for(post.path) */
        background-repeat:no-repeat;
        background-size: 100% 100%;
@@ -364,7 +364,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + (new Date().getFullYear()+new Date().getSeconds()) % 101 + '.jpg';
+    var bannerUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 101 + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
