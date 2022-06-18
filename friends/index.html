@@ -43,7 +43,7 @@
        /* background-image: url(/medias/featureimages/42.jpg); */ 
 
        /* url_for(post.path) */
-       background-image: url(/medias/featureimages/42.jpg);
+       /* background-image: url(/medias/featureimages/42.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -56,7 +56,7 @@
 
 
 <body>
-    <!-- <div class="back"> -->
+    <div class="back">
     
         <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -1101,6 +1101,10 @@ $(function () {
         <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
         <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
         <script src="/js/matery.js"></script>
+        <script>
+            var figUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 101 + '.jpg';
+            $('body').css('background-image', 'url(' + figUrl + ')');
+        </script>
 
         
 
@@ -1157,7 +1161,7 @@ $(function () {
         <script src="/libs/instantpage/instantpage.js" type="module"></script>
         
 
-    <!-- </div> -->
+    </div>
 </body>
 
 </html>
