@@ -40,9 +40,9 @@
    <style>
     body{
        /* background-image: url(/medias/featureimages/); */
+       /* 
        
-       
-       background-image: url(/medias/featureimages/52.jpg);
+       background-image: url(/medias/featureimages/21.jpg); */
        /* url_for(post.path) */
        background-repeat:no-repeat;
        background-size: 100% 100%;
@@ -52,7 +52,9 @@
 
 
 
-<body>
+<body background="/medias/featureimages/21.jpg">
+    
+    
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -1378,6 +1380,14 @@ $(function () {
     </a>
 </div>
 
+    <!-- <script>
+        var myImage = document.createElement("img");
+        var figUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getHours()) % 101 + '.jpg';
+        myImage.src = figUrl;
+        // myImage.width = 300;
+        // myImage.height = 300;
+        document.body.appendChild(myImage);
+    </script> -->
 
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
