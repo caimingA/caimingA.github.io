@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>统计学笔记</title>
+      <link href="/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
+      <url>/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。</p><h2 id="第一章-导论"><a href="#第一章-导论" class="headerlink" title="第一章 导论"></a>第一章 导论</h2><h3 id="数据类型的分类"><a href="#数据类型的分类" class="headerlink" title="数据类型的分类"></a>数据类型的分类</h3><p>其中顺序数据也可以归属于分类数据中，数值数据则可以进一步分为离散数据和连续数据。</p><p><img src="/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/chapter1/统计数据的分类.png" alt="fig1 例子"></p><h3 id="统计中的几个基本概念"><a href="#统计中的几个基本概念" class="headerlink" title="统计中的几个基本概念"></a>统计中的几个基本概念</h3><ol><li>总体：所研究的全部个体的集合</li><li>样本：从总体中抽出一部分组成的集合</li><li>参数：描述总体特征的数字度量</li><li>统计量：描述样本特征的数字度量<br><img src="/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/chapter1/总体和样本，参数和统计量.png" alt="fig2 例子"></li></ol><h2 id="第二章-数据的收集"><a href="#第二章-数据的收集" class="headerlink" title="第二章 数据的收集"></a>第二章 数据的收集</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> statistic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>借りると貸す</title>
       <link href="/2022/06/18/%E5%80%9F%E3%82%8A%E3%82%8B%E3%81%A8%E8%B2%B8%E3%81%99/"/>
       <url>/2022/06/18/%E5%80%9F%E3%82%8A%E3%82%8B%E3%81%A8%E8%B2%B8%E3%81%99/</url>
@@ -91,7 +118,7 @@
       <link href="/2021/12/23/first-article/"/>
       <url>/2021/12/23/first-article/</url>
       
-        <content type="html"><![CDATA[<p>my first blog.</p>]]></content>
+        <content type="html"><![CDATA[<p>终于把博客弄好了，随意写点东西。</p>]]></content>
       
       
       <categories>

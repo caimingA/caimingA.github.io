@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2022-06-18T05:18:03.897Z</updated>
+  <updated>2022-10-31T13:42:59.940Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>统计学笔记</title>
+    <link href="http://caiminga.github.io/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
+    <id>http://caiminga.github.io/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</id>
+    <published>2022-10-31T11:47:10.000Z</published>
+    <updated>2022-10-31T13:42:59.940Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。&lt;/p&gt;
+&lt;h2 id=&quot;第一章-导论&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="math basic" scheme="http://caiminga.github.io/categories/math-basic/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="statistic" scheme="http://caiminga.github.io/tags/statistic/"/>
+    
+  </entry>
   
   <entry>
     <title>借りると貸す</title>
@@ -104,14 +132,15 @@
     <link href="http://caiminga.github.io/2021/12/23/first-article/"/>
     <id>http://caiminga.github.io/2021/12/23/first-article/</id>
     <published>2021-12-22T15:03:49.000Z</published>
-    <updated>2021-12-23T08:20:30.146Z</updated>
+    <updated>2022-10-31T13:25:04.756Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;my first</summary>
+    <summary type="html">&lt;p&gt;终于把博客弄好了，随意写点东西。&lt;/p&gt;
+</summary>
         
       
     
