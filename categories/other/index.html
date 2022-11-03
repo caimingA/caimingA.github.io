@@ -40,10 +40,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/61.jpg); */ 
+       /* background-image: url(/medias/featureimages/10.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/61.jpg); */
+       /* background-image: url(/medias/featureimages/10.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -367,7 +367,8 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 101 + '.jpg';
+    // var bannerUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 211 + '.jpg';
+    var bannerUrl = "/medias/featureimages/" + (new Date().getTime()) % 211 + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
@@ -433,7 +434,7 @@
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="first article">
+                            <img src="/medias/featureimages/77.jpg" class="responsive-img" alt="first article">
                             
                             <span class="card-title">first article</span>
                         </div>
