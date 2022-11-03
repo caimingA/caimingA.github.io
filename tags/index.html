@@ -40,10 +40,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/10.jpg); */ 
+       /* background-image: url(/medias/featureimages/55.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/10.jpg); */
+       /* background-image: url(/medias/featureimages/55.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -368,10 +368,11 @@
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
     // var bannerUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 211 + '.jpg';
-    export var bannerUrl = "/medias/featureimages/" + parseInt(((new Date().getMilliseconds()) % (211 * 10)) / 10) + '.jpg';
-    // var bannerUrl = "/medias/featureimages/" + (new Date().getTime() % 211) + '.jpg';
+    export var bannerUrl = "/medias/featureimages/" + parseInt(((new Date().getTime()) % (211 * 100)) / 100) + '.jpg';
+    // var bannerUrl = "/medias/featureimages/" + (new Date().getMilliseconds() % 211) + '.jpg';
+    // var bannerUrl = "/medias/featureimages/" + (new Date().getMilliseconds() % 211) + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-    console.log(parseInt(((new Date().getMilliseconds()) % (211 * 10)) / 10))
+    console.log(parseInt(((new Date().getMilliseconds()) % (211))))
 </script>
 
 
@@ -454,19 +455,19 @@
                 </a>
                 
                 
-                <a href="/tags/statistic/" title="statistic: 1">
+                <a href="/tags/grammar/" title="grammar: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="statistic" style="background-color: #D7BDE2;">statistic
+                            data-tagname="grammar" style="background-color: #D7BDE2;">grammar
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/grammar/" title="grammar: 1">
+                <a href="/tags/statistic/" title="statistic: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="grammar" style="background-color: #A3E4D7;">grammar
+                            data-tagname="statistic" style="background-color: #A3E4D7;">statistic
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -495,7 +496,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"daily life","weight":1,"link":"/tags/daily-life/"},{"text":"math","weight":3,"link":"/tags/math/"},{"text":"RL","weight":1,"link":"/tags/RL/"},{"text":"ML","weight":1,"link":"/tags/ML/"},{"text":"japanese","weight":4,"link":"/tags/japanese/"},{"text":"language","weight":4,"link":"/tags/language/"},{"text":"words","weight":3,"link":"/tags/words/"},{"text":"statistic","weight":1,"link":"/tags/statistic/"},{"text":"grammar","weight":1,"link":"/tags/grammar/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"daily life","weight":1,"link":"/tags/daily-life/"},{"text":"math","weight":3,"link":"/tags/math/"},{"text":"RL","weight":1,"link":"/tags/RL/"},{"text":"ML","weight":1,"link":"/tags/ML/"},{"text":"japanese","weight":4,"link":"/tags/japanese/"},{"text":"language","weight":4,"link":"/tags/language/"},{"text":"words","weight":3,"link":"/tags/words/"},{"text":"grammar","weight":1,"link":"/tags/grammar/"},{"text":"statistic","weight":1,"link":"/tags/statistic/"}], {
         autoResize: true
     });
 </script>
@@ -708,11 +709,10 @@ $(function () {
         <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
         <script src="/js/matery.js"></script>
         <script>
-            import {bannerUrl} from './_partial/bg-cover-content.ejs'
             // var figUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 101 + '.jpg';
-            // var figUrl = "/medias/featureimages/" + parseInt(((new Date().getTime()) % (211 * 10)) / 10) + '.jpg';
-            // var figUrl = "/medias/featureimages/" + (new Date().getTime()) % 211 + '.jpg';
-            var figUrl = bannerUrl
+            var figUrl = "/medias/featureimages/" + parseInt(((new Date().getTime()) % (211 * 100)) / 100) + '.jpg';
+            // var figUrl = "/medias/featureimages/" + (new Date().getMilliseconds()) % 211 + '.jpg';
+            // var figUrl = bannerUrl
             $('body').css('background-image', 'url(' + figUrl + ')');
             // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
