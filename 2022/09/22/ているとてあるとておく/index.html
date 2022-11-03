@@ -43,10 +43,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/21.jpg); */ 
+       /* background-image: url(/medias/featureimages/10.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/21.jpg); */
+       /* background-image: url(/medias/featureimages/10.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -1435,11 +1435,13 @@ $(function () {
         <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
         <script src="/js/matery.js"></script>
         <script>
+            import {bannerUrl} from './_partial/bg-cover-content.ejs'
             // var figUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 101 + '.jpg';
-            var figUrl = "/medias/featureimages/" + parseInt(((new Date().getTime()) % (211 * 10)) / 10) + '.jpg';
+            // var figUrl = "/medias/featureimages/" + parseInt(((new Date().getTime()) % (211 * 10)) / 10) + '.jpg';
             // var figUrl = "/medias/featureimages/" + (new Date().getTime()) % 211 + '.jpg';
+            var figUrl = bannerUrl
             $('body').css('background-image', 'url(' + figUrl + ')');
-            console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
+            // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
         
