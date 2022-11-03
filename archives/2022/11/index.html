@@ -40,10 +40,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/10.jpg); */ 
+       /* background-image: url(/medias/featureimages/42.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/10.jpg); */
+       /* background-image: url(/medias/featureimages/42.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -368,7 +368,7 @@
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
     // var bannerUrl = "/medias/featureimages/" + (new Date().getFullYear()+new Date().getSeconds()) % 211 + '.jpg';
-    var bannerUrl = "/medias/featureimages/" + (new Date().getTime()) % 211 + '.jpg';
+    var bannerUrl = "/medias/featureimages/" + ((new Date().getTime()) % (211 * 5)) / 5 + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
