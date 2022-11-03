@@ -40,10 +40,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/45.jpg); */ 
+       /* background-image: url(/medias/featureimages/22.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/45.jpg); */
+       /* background-image: url(/medias/featureimages/22.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -800,7 +800,7 @@ $(function () {
             var figUrl = "/medias/featureimages/" + parseInt(((new Date().getTime()) % (211 * 10)) / 10) + '.jpg';
             // var figUrl = "/medias/featureimages/" + (new Date().getTime()) % 211 + '.jpg';
             $('body').css('background-image', 'url(' + figUrl + ')');
-            // console.log()
+            console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
         
