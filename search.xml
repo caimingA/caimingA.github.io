@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>SIR模型</title>
+      <link href="/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/"/>
+      <url>/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>这学期选了门课，<strong>複雑システムのモデル化と問題解決</strong>。老师是位很元气的人😂。课程上会介绍应用在不同领域的各种数学模型。按之前的话，这课我可能听一节就跑了，但老师讲的日语实在是太容易听懂了（上课的时候我记的笔记都是在记实用的日语表达方式😂），所以就留下来了。不过每节课都要被提问，也是挺顶的。</p><p>SIR模型是用来模拟分析感染者数量的一种模型，这次对新冠疫情进行一个简单的分析模拟。</p><h2 id="SIR"><a href="#SIR" class="headerlink" title="SIR"></a>SIR</h2><p>S（Susceptibles）：易感人群，但还没有感染</p><p>I（Infected）：已感染的人群</p><p>R（Removed）：移除人群，如死亡和回复健康。</p><p>这里还要有几个假设。三种人群的总和一直保持不变，即病毒的致死率很低，所以几乎没有死亡的人。感染回复后的人群也不会再二次感染。</p><p>当然根据不同的假设，SIR还有很多的变体模型。</p><h3 id="定义式"><a href="#定义式" class="headerlink" title="定义式"></a>定义式</h3><script type="math/tex; mode=display">\begin{align}        & \frac{dS}{dt} = -\beta IS \notag \\        & \frac{dI}{dt} = \beta IS - \gamma I \notag \\        & \frac{dR}{dt} = \gamma I \notag\end{align}</script><p>定义式其实还有一种写法，</p><script type="math/tex; mode=display">\begin{align}        & \frac{dS}{dt} = -\beta \frac{IS}{N} \notag \\        & \frac{dI}{dt} = \beta \frac{IS}{N} - \gamma I \notag \\        & \frac{dR}{dt} = \gamma I \notag    \end{align}</script><p>第一种写法是将$S,I,R$定义为三者分别在人群中所占的比例。而第二种写法</p><p>$S,I,R$就是代表数量。$S’=\frac{S}{N}, I’=\frac{I}{N}, R’=\frac{R}{N}$代入第一种写法中也可以得到第二种写法。</p><p>这次我主要采用第一种写法。</p><p>$\beta$是感染率，$\alpha$是回复率。具体数值的推测比较复杂，这里直接写出模拟所用的数值$\beta = 0.5479541876100241$, $\gamma = 0.3050387232391092$</p><p>$R_0 = \frac{\beta}{\alpha}$是感染半径，当大于1时，病毒会向外扩张，小于1时，病毒则不会外传。</p><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>主要对北京的数据进行模拟。</p><p>数据来自<a href="https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases">HDX的Novel Coronavirus (COVID-19) Cases Data</a></p><p>$\alpha$和$\beta$的推测也是基于该数据的。</p><p><img src="/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/1667647549256.png" alt="模拟结果"></p><p>x坐标为0表示的是2020年1月22那一天。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> computer science </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> CS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微分方程</title>
+      <link href="/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
+      <url>/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>这篇博文主要将一些微分方程的解法记录在这里，会持续更新。</p><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>$v(t) = exp(At)v(0)$是微分方程$\frac{d}{dt}v(t) = Av(t)$的解。</p><p>其中$A$是矩阵，当然也可以是一个常数。$v(0)$是$v$的初始值。</p><h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>先对$v(t) = exp(At)v(0)$进行泰勒展开，然后对$v(t)$进行微分。</p><script type="math/tex; mode=display">\begin{align}        & e^{tA}v(0) = t^0A^0v(0) + t^1A^1v(0) + \frac{t^2}{2}A^2v(0) + \frac{t^3}{6}A^3v(0) + \cdots + \frac{t^n}{n!}A^nv(0) + \cdots \notag \\        & \frac{d}{dt}v(t)  \notag \\ &=        \frac{d}{dt}e^{tA}v(0) \notag \\ &= t^0A^1v(0) + t^1A^2v(0) + \frac{t^2}{2}A^3v(0) + \frac{t^3}{6}A^4v(0) + \cdots + \frac{t^{(n-1)}}{(n-1)!}A^{n}v(0) + \cdots \notag \\ &= A(t^0A^0v(0) + t^1A^1v(0) + \frac{t^2}{2}A^2v(0) + \frac{t^3}{6}A^3v(0) + \cdots + \frac{t^{(n-1)}}{(n-1)!}A^{n - 1}v(0) + \cdots)  \notag \\ &= Ae^{tA}v(0)\notag\end{align}</script><p>所以可得，</p><script type="math/tex; mode=display">\begin{align}\frac{d}{dt}v(t) = Ae^{tA}v(0) = Av(t) \notag\end{align}</script><p>即当$v(t)=e^{At}v(0)$时，$v(t)$的微分是$Av(t)$</p><p>所以倒退，$v(t) = exp(At)v(0)$是微分方程$\frac{d}{dt}v(t) = Av(t)$的解。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> calculus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>现代日语语法</title>
       <link href="/2022/11/03/%E7%8E%B0%E4%BB%A3%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
       <url>/2022/11/03/%E7%8E%B0%E4%BB%A3%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/</url>

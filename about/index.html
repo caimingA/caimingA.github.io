@@ -40,10 +40,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/28.jpg); */ 
+       /* background-image: url(/medias/featureimages/45.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/28.jpg); */
+       /* background-image: url(/medias/featureimages/45.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -378,7 +378,7 @@
     // var bannerUrl = "/medias/featureimages/" + parseInt(((new Date().getTime()) % (211 * 200)) / 200) + '.jpg';
     // var bannerUrl = "/medias/featureimages/" + (new Date().getMilliseconds() % 211) + '.jpg';
     // var bannerUrl = "/medias/featureimages/" + (new Date().getMilliseconds() % 301) + '.jpg';
-    var bannerUrl = "/medias/featureimages/" + (new Date().getMilliseconds() % 301) + '.jpg';
+    var bannerUrl = "/medias/featureimages/" + (new Date().getMilliseconds() % 311) + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
     // console.log(parseInt(((new Date().getMilliseconds()) % (211))))
 </script>
@@ -397,21 +397,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">9</a></span>
+    <span class="count"><a href="/">11</a></span>
     <span class="name">Posts</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">3</a></span>
+    <span class="count"><a href="/categories">4</a></span>
     <span class="name">Categories</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">9</a></span>
+    <span class="count"><a href="/tags">11</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -427,21 +427,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">9</a></span>
+    <span class="count"><a href="/">11</a></span>
     <span class="name">Posts</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">3</a></span>
+    <span class="count"><a href="/categories">4</a></span>
     <span class="name">Categories</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">9</a></span>
+    <span class="count"><a href="/tags">11</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -589,7 +589,7 @@
                 name: 'Number of posts',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,2,0,0,0,0,0,3,0,0,1,2,1],
+                data: [0,2,0,0,0,0,0,3,0,0,1,2,3],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -631,7 +631,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"other","value":1},{"name":"math basic","value":3},{"name":"japanese","value":4}],
+                data: [{"name":"other","value":1},{"name":"math basic","value":4},{"name":"japanese","value":4},{"name":"computer science","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -655,7 +655,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["japanese","language","math","words","daily life","RL","ML","statistic","grammar"]
+                data: ["math","japanese","language","words","daily life","RL","ML","statistic","grammar","CS"]
             }
         ],
         yAxis: [
@@ -668,7 +668,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [4,4,3,3,1,1,1,1,1],
+                data: [5,4,4,3,1,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -904,6 +904,18 @@
             
             <a href="/tags/grammar/">
                 <span class="chip center-align waves-effect waves-light chip-default">grammar</span>
+            </a>
+            
+            
+            
+            <a href="/tags/CS/">
+                <span class="chip center-align waves-effect waves-light chip-default">CS</span>
+            </a>
+            
+            
+            
+            <a href="/tags/calculus/">
+                <span class="chip center-align waves-effect waves-light chip-default">calculus</span>
             </a>
             
             

@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2022-11-05T08:20:58.742Z</updated>
+  <updated>2022-11-05T11:28:34.502Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SIR模型</title>
+    <link href="http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/</id>
+    <published>2022-11-05T09:57:37.000Z</published>
+    <updated>2022-11-05T11:28:34.502Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="computer science" scheme="http://caiminga.github.io/categories/computer-science/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="CS" scheme="http://caiminga.github.io/tags/CS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微分方程</title>
+    <link href="http://caiminga.github.io/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
+    <id>http://caiminga.github.io/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</id>
+    <published>2022-11-05T09:57:15.000Z</published>
+    <updated>2022-11-05T10:28:55.318Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h2&gt;&lt;p&gt;这篇博文主要将一些微分方程的解法记录在这里，会持续更新。&lt;/p&gt;
+&lt;h2 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="math basic" scheme="http://caiminga.github.io/categories/math-basic/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="calculus" scheme="http://caiminga.github.io/tags/calculus/"/>
+    
+  </entry>
   
   <entry>
     <title>现代日语语法</title>
