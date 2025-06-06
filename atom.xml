@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2022-11-05T11:28:34.502Z</updated>
+  <updated>2025-06-06T12:04:07.530Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Assumptions for Causal Discovery</title>
+    <link href="http://caiminga.github.io/2025/06/06/Assumptions-for-Causal-Discovery/"/>
+    <id>http://caiminga.github.io/2025/06/06/Assumptions-for-Causal-Discovery/</id>
+    <published>2025-06-06T11:58:27.000Z</published>
+    <updated>2025-06-06T12:04:07.530Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h2&gt;&lt;p&gt;I will list up some assumptions when a casual</summary>
+        
+      
+    
+    
+    
+    <category term="research" scheme="http://caiminga.github.io/categories/research/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="RL" scheme="http://caiminga.github.io/tags/RL/"/>
+    
+    <category term="ML" scheme="http://caiminga.github.io/tags/ML/"/>
+    
+  </entry>
   
   <entry>
     <title>SIR模型</title>

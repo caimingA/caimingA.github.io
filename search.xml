@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Assumptions for Causal Discovery</title>
+      <link href="/2025/06/06/Assumptions-for-Causal-Discovery/"/>
+      <url>/2025/06/06/Assumptions-for-Causal-Discovery/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>I will list up some assumptions when a casual model is considered here.<br>Also, several causal learning method corresoponding to mentioned assumption will be introduced.</p><h1 id="Markov-assumption"><a href="#Markov-assumption" class="headerlink" title="Markov assumption"></a>Markov assumption</h1><h1 id="Faithfulness-assumption"><a href="#Faithfulness-assumption" class="headerlink" title="Faithfulness assumption"></a>Faithfulness assumption</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> research </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> RL </tag>
+            
+            <tag> ML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SIR模型</title>
       <link href="/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/"/>
       <url>/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/</url>
