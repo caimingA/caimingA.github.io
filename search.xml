@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Bootstrap</title>
+      <link href="/2025/09/17/Bootstrap/"/>
+      <url>/2025/09/17/Bootstrap/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里写一些对于bootstrap的理解。<br>在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。</p><p>如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线性相关。当然，在假定随机变量是非高斯的时候，这个命题的逆命题一般并不成立。</p><p>我们也可以通过Wald Test来对回归出来的参数进行假说检验。当然，我们需要知道我们估计的这个参数的标准误差。</p><p>除了上述方法，bootstrap也是一种简单且神奇的方法。<br>这里写一些对于bootstrap的理解。</p><h1 id="概念图"><a href="#概念图" class="headerlink" title="概念图"></a>概念图</h1><p><img src="/2025/09/17/Bootstrap/bootstrap.png" alt="fig1 bootstrap的概念图"><br>这里的“Aggregation”也可以被认为是“Bagging”。</p><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><ol><li>Bootstrap 重采样：进行$B$次有放回的采样，每次采样的大小一般默认与原样本的大小一致。用每一采集到的样本进行参数估计。</li><li>构造置信区间：上一步中会得到的$B$个估计值。根据给定的显著水平（比如说，$\alpha = 0.05$），得到$\alpha / 2$和$1-(\alpha - 2)$分位点的估计值（双尾检验）。</li><li>判断是否显著：如果我们原假设的参数值（比如说，$H_{0}:\quad \theta = 0$）落入到了上一步骤求得两个分位点数据所构成的区间（置信区间）里面，则不拒绝原假设。反之，拒绝原假设。</li></ol><p>Note：这里的置信区间不对分布进行假设，而是直接用分位点法。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> statistic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一些专业名词的定义及解释</title>
       <link href="/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/"/>
       <url>/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/</url>
