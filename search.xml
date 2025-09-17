@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>一些专业名词的定义及解释</title>
+      <link href="/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/"/>
+      <url>/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里主要对一些我经常遇到的专业名词进行记录</p><h1 id="概率统计"><a href="#概率统计" class="headerlink" title="概率统计"></a>概率统计</h1><p>随机变量（Random Variable）<br>定义：一个在实验或观测前无法确定其取值，只能通过概率分布来描述的变量。</p><p>类型：<br>离散型：如掷骰子的结果 $X \in {1, 2, 3, 4, 5, 6}$<br>连续型：如身高、体重等<br>本质：是一个函数，将样本空间映射到实数域。</p><p>特点：<br>是一个“变量”，表示可能的结果；<br>有对应的概率分布（如正态分布、伯努利分布等）；<br>不能观察，只能观察其“取值”。</p><p>示例：<br>掷一次骰子，定义 $X$ 表示点数，则 $X$ 是一个随机变量。</p><hr><p>统计量（Statistic）<br>定义：对样本数据进行函数运算得到的结果，本身也是一个随机变量，用于概括样本特征。<br>本质：函数 $\theta = f(X_1, \dots, X_n)$，其中 $X_i$ 是样本。<br>常见统计量：<br>样本均值：$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$<br>样本方差：$S^2 = \frac{1}{n-1} \sum_{i=1}^{n}(X_i - \bar{X})^2$<br>中位数、最大值、偏度、峰度等</p><hr><p>估计量（Estimator）</p><p>定义：一种用于估计总体参数的统计量。比如你想估计总体均值 $\mu$，你就可以使用样本均值 $\bar{X}$ 来作为“估计量”。</p><p>关系：<br>估计量 = 统计量 + 明确的估计目标</p><p>估计量是“命名后的统计量”，其目的是估计某个具体的参数</p><p>举例：<br>样本均值 $\bar{X}$ 是总体均值 $\mu$ 的估计量；<br>样本方差 $S^2$ 是总体方差 $\sigma^2$ 的估计量。</p><p>区别于统计量：<br>统计量泛指对样本进行的任意函数运算；<br>估计量是统计量中用于估计未知总体参数的那一类。</p><hr><p>估计值（Estimate）<br>定义：估计量在一个具体样本上的取值，即实际计算出来的具体数字。</p><p>举例：<br>你有一个样本 $[2, 4, 6]$，样本均值为 $\bar{X} = 4$，那么这个“4”就是估计值。<br>$S^2 = 4$ 也是一个估计值，是用这个样本计算出来的结果。</p><h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> statistic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Central Limit Theorem (CLT)</title>
+      <link href="/2025/09/17/Central-Limit-Theorem-CLT/"/>
+      <url>/2025/09/17/Central-Limit-Theorem-CLT/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里记录一些有关于中心极限定理的结论和推导</p><h1 id="中心极限定理的简单理解"><a href="#中心极限定理的简单理解" class="headerlink" title="中心极限定理的简单理解"></a>中心极限定理的简单理解</h1><p>中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取$n$个抽样，一共抽$m$次。<br>然后把这$m$组抽样分别求出平均值。 这些平均值的分布接近正态分布。</p><p>Note:<br>样本均值这一统计量会服从正态分布</p><h1 id="标准形式定义"><a href="#标准形式定义" class="headerlink" title="标准形式定义"></a>标准形式定义</h1><p>设 $X_{1}, X_{2}, \cdots, X_{n}$ 是一组i.i.d的随机变量，每个随机变量具有有限的数学期望$E [X_{i}] = \mu$ 和有限的方差 $ Var(X_{i})=\sigma^{2}$，当样本量$n$足够大时，样本均值</p><script type="math/tex; mode=display">\bar{X}_{n} = \frac{1}{n}\sum^{n}_{i=1}X_{i}</script><p>的标准形式</p><script type="math/tex; mode=display">Z_{n} = \frac{\bar{X}_{n} - \mu}{\frac{\sigma}{n}}</script><p>在分布上收敛于标准正态分布，即：</p><script type="math/tex; mode=display">Z_{n} \underrightarrow{d} {\cal N}(0, 1), \quad s.t.  \quad n \to  \infty,</script><p>或者</p><script type="math/tex; mode=display">\bar{X}_{n}  \approx {\cal N}(\mu, \frac{\sigma^{2}}{n}), \quad s.t.  \quad n \to  \infty</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> statistic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Assumptions for Causal Discovery</title>
       <link href="/2025/06/06/Assumptions-for-Causal-Discovery/"/>
       <url>/2025/06/06/Assumptions-for-Causal-Discovery/</url>

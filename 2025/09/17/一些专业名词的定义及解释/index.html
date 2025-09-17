@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SIR模型, CM&#39;s SPACE">
-    <meta name="description" content="简述这学期选了门课，複雑システムのモデル化と問題解決。老师是位很元气的人😂。课程上会介绍应用在不同领域的各种数学模型。按之前的话，这课我可能听一节就跑了，但老师讲的日语实在是太容易听懂了（上课的时候我记的笔记都是在记实用的日语表达方式😂">
+    <meta name="keywords" content="一些专业名词的定义及解释, CM&#39;s SPACE">
+    <meta name="description" content="简述这里主要对一些我经常遇到的专业名词进行记录
+概率统计随机变量（Random Variable）定义：一个在实验或观测前无法确定其取值，只能通过概率分布来描述的变量。
+类型：离散型：如掷骰子的结果 $X \in {1, 2, 3, 4, ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SIR模型 | CM&#39;s SPACE</title>
+    <title>一些专业名词的定义及解释 | CM&#39;s SPACE</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -331,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SIR模型</h1>
+                    <h1 class="description center-align post-title">一些专业名词的定义及解释</h1>
                 </div>
             </div>
         </div>
@@ -456,8 +458,8 @@
                                 <span class="chip bg-color">math</span>
                             </a>
                         
-                            <a href="/tags/CS/">
-                                <span class="chip bg-color">CS</span>
+                            <a href="/tags/statistic/">
+                                <span class="chip bg-color">statistic</span>
                             </a>
                         
                     </div>
@@ -468,8 +470,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/computer-science/" class="post-category">
-                                computer science
+                            <a href="/categories/math-basic/" class="post-category">
+                                math basic
                             </a>
                         
                     </div>
@@ -481,7 +483,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-11-05
+                    2025-09-17
                 </div>
                 
 
@@ -505,35 +507,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>这学期选了门课，<strong>複雑システムのモデル化と問題解決</strong>。老师是位很元气的人😂。课程上会介绍应用在不同领域的各种数学模型。按之前的话，这课我可能听一节就跑了，但老师讲的日语实在是太容易听懂了（上课的时候我记的笔记都是在记实用的日语表达方式😂），所以就留下来了。不过每节课都要被提问，也是挺顶的。</p>
-<p>SIR模型是用来模拟分析感染者数量的一种模型，这次对新冠疫情进行一个简单的分析模拟。</p>
-<h2 id="SIR"><a href="#SIR" class="headerlink" title="SIR"></a>SIR</h2><p>S（Susceptibles）：易感人群，但还没有感染</p>
-<p>I（Infected）：已感染的人群</p>
-<p>R（Removed）：移除人群，如死亡和回复健康。</p>
-<p>这里还要有几个假设。三种人群的总和一直保持不变，即病毒的致死率很低，所以几乎没有死亡的人。感染回复后的人群也不会再二次感染。</p>
-<p>当然根据不同的假设，SIR还有很多的变体模型。</p>
-<h3 id="定义式"><a href="#定义式" class="headerlink" title="定义式"></a>定义式</h3><script type="math/tex; mode=display">
-\begin{align}
-        & \frac{dS}{dt} = -\beta IS \notag \\
-        & \frac{dI}{dt} = \beta IS - \gamma I \notag \\
-        & \frac{dR}{dt} = \gamma I \notag
-\end{align}</script><p>定义式其实还有一种写法，</p>
-<script type="math/tex; mode=display">
-\begin{align}
-        & \frac{dS}{dt} = -\beta \frac{IS}{N} \notag \\
-        & \frac{dI}{dt} = \beta \frac{IS}{N} - \gamma I \notag \\
-        & \frac{dR}{dt} = \gamma I \notag
-    \end{align}</script><p>第一种写法是将$S,I,R$定义为三者分别在人群中所占的比例。而第二种写法</p>
-<p>$S,I,R$就是代表数量。$S’=\frac{S}{N}, I’=\frac{I}{N}, R’=\frac{R}{N}$代入第一种写法中也可以得到第二种写法。</p>
-<p>这次我主要采用第一种写法。</p>
-<p>$\beta$是感染率，$\alpha$是回复率。具体数值的推测比较复杂，这里直接写出模拟所用的数值$\beta = 0.5479541876100241$, $\gamma = 0.3050387232391092$</p>
-<p>$R_0 = \frac{\beta}{\alpha}$是感染半径，当大于1时，病毒会向外扩张，小于1时，病毒则不会外传。</p>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>主要对北京的数据进行模拟。</p>
-<p>数据来自<a target="_blank" rel="noopener" href="https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases">HDX的Novel Coronavirus (COVID-19) Cases Data</a></p>
-<p>$\alpha$和$\beta$的推测也是基于该数据的。</p>
-<p><img src="/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/1667647549256.png" alt="模拟结果"></p>
-<p>x坐标为0表示的是2020年1月22那一天。</p>
-
+                <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里主要对一些我经常遇到的专业名词进行记录</p>
+<h1 id="概率统计"><a href="#概率统计" class="headerlink" title="概率统计"></a>概率统计</h1><p>随机变量（Random Variable）<br>定义：一个在实验或观测前无法确定其取值，只能通过概率分布来描述的变量。</p>
+<p>类型：<br>离散型：如掷骰子的结果 $X \in {1, 2, 3, 4, 5, 6}$<br>连续型：如身高、体重等<br>本质：是一个函数，将样本空间映射到实数域。</p>
+<p>特点：<br>是一个“变量”，表示可能的结果；<br>有对应的概率分布（如正态分布、伯努利分布等）；<br>不能观察，只能观察其“取值”。</p>
+<p>示例：<br>掷一次骰子，定义 $X$ 表示点数，则 $X$ 是一个随机变量。</p>
+<hr>
+<p>统计量（Statistic）<br>定义：对样本数据进行函数运算得到的结果，本身也是一个随机变量，用于概括样本特征。<br>本质：函数 $\theta = f(X_1, \dots, X_n)$，其中 $X_i$ 是样本。<br>常见统计量：<br>样本均值：$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$<br>样本方差：$S^2 = \frac{1}{n-1} \sum_{i=1}^{n}(X_i - \bar{X})^2$<br>中位数、最大值、偏度、峰度等</p>
+<hr>
+<p>估计量（Estimator）</p>
+<p>定义：一种用于估计总体参数的统计量。比如你想估计总体均值 $\mu$，你就可以使用样本均值 $\bar{X}$ 来作为“估计量”。</p>
+<p>关系：<br>估计量 = 统计量 + 明确的估计目标</p>
+<p>估计量是“命名后的统计量”，其目的是估计某个具体的参数</p>
+<p>举例：<br>样本均值 $\bar{X}$ 是总体均值 $\mu$ 的估计量；<br>样本方差 $S^2$ 是总体方差 $\sigma^2$ 的估计量。</p>
+<p>区别于统计量：<br>统计量泛指对样本进行的任意函数运算；<br>估计量是统计量中用于估计未知总体参数的那一类。</p>
+<hr>
+<p>估计值（Estimate）<br>定义：估计量在一个具体样本上的取值，即实际计算出来的具体数字。</p>
+<p>举例：<br>你有一个样本 $[2, 4, 6]$，样本均值为 $\bar{X} = 4$，那么这个“4”就是估计值。<br>$S^2 = 4$ 也是一个估计值，是用这个样本计算出来的结果。</p>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1>
                 
             </div>
             <hr/>
@@ -559,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/">http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/</a>
+                    <a href="http://caiminga.github.io/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/">http://caiminga.github.io/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,8 +592,8 @@
                                     <span class="chip bg-color">math</span>
                                 </a>
                             
-                                <a href="/tags/CS/">
-                                    <span class="chip bg-color">CS</span>
+                                <a href="/tags/statistic/">
+                                    <span class="chip bg-color">statistic</span>
                                 </a>
                             
                         </div>
@@ -914,17 +905,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2025/06/06/Assumptions-for-Causal-Discovery/">
+                <a href="/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Assumptions for Causal Discovery">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="一些专业名词的定义及解释">
                         
-                        <span class="card-title">Assumptions for Causal Discovery</span>
+                        <span class="card-title">一些专业名词的定义及解释</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -934,21 +926,22 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-06-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-09-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/research/" class="post-category">
-                                    research
+                            <a href="/categories/math-basic/" class="post-category">
+                                    math basic
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -956,12 +949,8 @@
                         <span class="chip bg-color">math</span>
                     </a>
                     
-                    <a href="/tags/RL/">
-                        <span class="chip bg-color">RL</span>
-                    </a>
-                    
-                    <a href="/tags/ML/">
-                        <span class="chip bg-color">ML</span>
+                    <a href="/tags/statistic/">
+                        <span class="chip bg-color">statistic</span>
                     </a>
                     
                 </div>
@@ -975,13 +964,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+                <a href="/2025/09/17/Central-Limit-Theorem-CLT/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="微分方程">
+                        <img src="/medias/featureimages/90.jpg" class="responsive-img" alt="Central Limit Theorem (CLT)">
                         
-                        <span class="card-title">微分方程</span>
+                        <span class="card-title">Central Limit Theorem (CLT)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -992,7 +981,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-09-17
                             </span>
                         <span class="publish-author">
                             
@@ -1013,8 +1002,8 @@
                         <span class="chip bg-color">math</span>
                     </a>
                     
-                    <a href="/tags/calculus/">
-                        <span class="chip bg-color">calculus</span>
+                    <a href="/tags/statistic/">
+                        <span class="chip bg-color">statistic</span>
                     </a>
                     
                 </div>

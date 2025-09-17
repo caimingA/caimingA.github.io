@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SIR模型, CM&#39;s SPACE">
-    <meta name="description" content="简述这学期选了门课，複雑システムのモデル化と問題解決。老师是位很元气的人😂。课程上会介绍应用在不同领域的各种数学模型。按之前的话，这课我可能听一节就跑了，但老师讲的日语实在是太容易听懂了（上课的时候我记的笔记都是在记实用的日语表达方式😂">
+    <meta name="keywords" content="Central Limit Theorem (CLT), CM&#39;s SPACE">
+    <meta name="description" content="简述这里记录一些有关于中心极限定理的结论和推导
+中心极限定理的简单理解中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取$n$个抽样，一共抽$m$次。然后把这$m$组抽样分别求出平均值。 这些平均值的分布接近正态分布。
+N">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SIR模型 | CM&#39;s SPACE</title>
+    <title>Central Limit Theorem (CLT) | CM&#39;s SPACE</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -331,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/90.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SIR模型</h1>
+                    <h1 class="description center-align post-title">Central Limit Theorem (CLT)</h1>
                 </div>
             </div>
         </div>
@@ -456,8 +458,8 @@
                                 <span class="chip bg-color">math</span>
                             </a>
                         
-                            <a href="/tags/CS/">
-                                <span class="chip bg-color">CS</span>
+                            <a href="/tags/statistic/">
+                                <span class="chip bg-color">statistic</span>
                             </a>
                         
                     </div>
@@ -468,8 +470,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/computer-science/" class="post-category">
-                                computer science
+                            <a href="/categories/math-basic/" class="post-category">
+                                math basic
                             </a>
                         
                     </div>
@@ -481,7 +483,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-11-05
+                    2025-09-17
                 </div>
                 
 
@@ -505,35 +507,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>这学期选了门课，<strong>複雑システムのモデル化と問題解決</strong>。老师是位很元气的人😂。课程上会介绍应用在不同领域的各种数学模型。按之前的话，这课我可能听一节就跑了，但老师讲的日语实在是太容易听懂了（上课的时候我记的笔记都是在记实用的日语表达方式😂），所以就留下来了。不过每节课都要被提问，也是挺顶的。</p>
-<p>SIR模型是用来模拟分析感染者数量的一种模型，这次对新冠疫情进行一个简单的分析模拟。</p>
-<h2 id="SIR"><a href="#SIR" class="headerlink" title="SIR"></a>SIR</h2><p>S（Susceptibles）：易感人群，但还没有感染</p>
-<p>I（Infected）：已感染的人群</p>
-<p>R（Removed）：移除人群，如死亡和回复健康。</p>
-<p>这里还要有几个假设。三种人群的总和一直保持不变，即病毒的致死率很低，所以几乎没有死亡的人。感染回复后的人群也不会再二次感染。</p>
-<p>当然根据不同的假设，SIR还有很多的变体模型。</p>
-<h3 id="定义式"><a href="#定义式" class="headerlink" title="定义式"></a>定义式</h3><script type="math/tex; mode=display">
-\begin{align}
-        & \frac{dS}{dt} = -\beta IS \notag \\
-        & \frac{dI}{dt} = \beta IS - \gamma I \notag \\
-        & \frac{dR}{dt} = \gamma I \notag
-\end{align}</script><p>定义式其实还有一种写法，</p>
-<script type="math/tex; mode=display">
-\begin{align}
-        & \frac{dS}{dt} = -\beta \frac{IS}{N} \notag \\
-        & \frac{dI}{dt} = \beta \frac{IS}{N} - \gamma I \notag \\
-        & \frac{dR}{dt} = \gamma I \notag
-    \end{align}</script><p>第一种写法是将$S,I,R$定义为三者分别在人群中所占的比例。而第二种写法</p>
-<p>$S,I,R$就是代表数量。$S’=\frac{S}{N}, I’=\frac{I}{N}, R’=\frac{R}{N}$代入第一种写法中也可以得到第二种写法。</p>
-<p>这次我主要采用第一种写法。</p>
-<p>$\beta$是感染率，$\alpha$是回复率。具体数值的推测比较复杂，这里直接写出模拟所用的数值$\beta = 0.5479541876100241$, $\gamma = 0.3050387232391092$</p>
-<p>$R_0 = \frac{\beta}{\alpha}$是感染半径，当大于1时，病毒会向外扩张，小于1时，病毒则不会外传。</p>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>主要对北京的数据进行模拟。</p>
-<p>数据来自<a target="_blank" rel="noopener" href="https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases">HDX的Novel Coronavirus (COVID-19) Cases Data</a></p>
-<p>$\alpha$和$\beta$的推测也是基于该数据的。</p>
-<p><img src="/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/1667647549256.png" alt="模拟结果"></p>
-<p>x坐标为0表示的是2020年1月22那一天。</p>
-
+                <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里记录一些有关于中心极限定理的结论和推导</p>
+<h1 id="中心极限定理的简单理解"><a href="#中心极限定理的简单理解" class="headerlink" title="中心极限定理的简单理解"></a>中心极限定理的简单理解</h1><p>中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取$n$个抽样，一共抽$m$次。<br>然后把这$m$组抽样分别求出平均值。 这些平均值的分布接近正态分布。</p>
+<p>Note:<br>样本均值这一统计量会服从正态分布</p>
+<h1 id="标准形式定义"><a href="#标准形式定义" class="headerlink" title="标准形式定义"></a>标准形式定义</h1><p>设 $X_{1}, X_{2}, \cdots, X_{n}$ 是一组i.i.d的随机变量，每个随机变量具有有限的数学期望$E [X_{i}] = \mu$ 和有限的方差 $ Var(X_{i})=\sigma^{2}$，当样本量$n$足够大时，样本均值</p>
+<script type="math/tex; mode=display">\bar{X}_{n} = \frac{1}{n}\sum^{n}_{i=1}X_{i}</script><p>的标准形式</p>
+<script type="math/tex; mode=display">Z_{n} = \frac{\bar{X}_{n} - \mu}{\frac{\sigma}{n}}</script><p>在分布上收敛于标准正态分布，即：</p>
+<script type="math/tex; mode=display">Z_{n} \underrightarrow{d} {\cal N}(0, 1), \quad s.t.  \quad n \to  \infty,</script><p>或者</p>
+<script type="math/tex; mode=display">\bar{X}_{n}  \approx {\cal N}(\mu, \frac{\sigma^{2}}{n}), \quad s.t.  \quad n \to  \infty</script>
                 
             </div>
             <hr/>
@@ -559,7 +540,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/">http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/</a>
+                    <a href="http://caiminga.github.io/2025/09/17/Central-Limit-Theorem-CLT/">http://caiminga.github.io/2025/09/17/Central-Limit-Theorem-CLT/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,8 +582,8 @@
                                     <span class="chip bg-color">math</span>
                                 </a>
                             
-                                <a href="/tags/CS/">
-                                    <span class="chip bg-color">CS</span>
+                                <a href="/tags/statistic/">
+                                    <span class="chip bg-color">statistic</span>
                                 </a>
                             
                         </div>
@@ -918,6 +899,59 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
+                <a href="/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="一些专业名词的定义及解释">
+                        
+                        <span class="card-title">一些专业名词的定义及解释</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-09-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/math-basic/" class="post-category">
+                                    math basic
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/math/">
+                        <span class="chip bg-color">math</span>
+                    </a>
+                    
+                    <a href="/tags/statistic/">
+                        <span class="chip bg-color">statistic</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2025/06/06/Assumptions-for-Causal-Discovery/">
                     <div class="card-image">
                         
@@ -934,9 +968,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-06-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-06-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -962,59 +996,6 @@
                     
                     <a href="/tags/ML/">
                         <span class="chip bg-color">ML</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="微分方程">
-                        
-                        <span class="card-title">微分方程</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/math-basic/" class="post-category">
-                                    math basic
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/math/">
-                        <span class="chip bg-color">math</span>
-                    </a>
-                    
-                    <a href="/tags/calculus/">
-                        <span class="chip bg-color">calculus</span>
                     </a>
                     
                 </div>

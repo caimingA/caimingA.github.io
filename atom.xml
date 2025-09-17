@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2025-06-08T11:55:38.581Z</updated>
+  <updated>2025-09-17T02:55:56.339Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些专业名词的定义及解释</title>
+    <link href="http://caiminga.github.io/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/"/>
+    <id>http://caiminga.github.io/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/</id>
+    <published>2025-09-17T02:48:51.000Z</published>
+    <updated>2025-09-17T02:55:56.339Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;这里主要对一些我经常遇到的专业名词进行记录&lt;/p&gt;
+&lt;h1 id=&quot;概率统计&quot;&gt;&lt;a href=&quot;#概率统计&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="math basic" scheme="http://caiminga.github.io/categories/math-basic/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="statistic" scheme="http://caiminga.github.io/tags/statistic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Central Limit Theorem (CLT)</title>
+    <link href="http://caiminga.github.io/2025/09/17/Central-Limit-Theorem-CLT/"/>
+    <id>http://caiminga.github.io/2025/09/17/Central-Limit-Theorem-CLT/</id>
+    <published>2025-09-17T02:28:25.000Z</published>
+    <updated>2025-09-17T03:14:18.628Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;这里记录一些有关于中心极限定理的结论和推导&lt;/p&gt;
+&lt;h1 id=&quot;中心极限定理的简单理解&quot;&gt;&lt;a href=&quot;#中心极限定理的简单理解&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="math basic" scheme="http://caiminga.github.io/categories/math-basic/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="statistic" scheme="http://caiminga.github.io/tags/statistic/"/>
+    
+  </entry>
   
   <entry>
     <title>Assumptions for Causal Discovery</title>
