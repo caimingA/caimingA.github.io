@@ -4,11 +4,65 @@
   
     
     <entry>
+      <title>t分布，卡方分布，F分布</title>
+      <link href="/2026/06/10/t%E5%88%86%E5%B8%83%EF%BC%8C%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83%EF%BC%8CF%E5%88%86%E5%B8%83/"/>
+      <url>/2026/06/10/t%E5%88%86%E5%B8%83%EF%BC%8C%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83%EF%BC%8CF%E5%88%86%E5%B8%83/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很对模型都会默认一个很基本的假设：噪声是服从高斯分布的（高斯分布也叫做常态分布，这是更好理解的。反而是正态分布z这个名字让人疑惑）。</p><p>如果一个随机变量$X$服从高斯分布，即$X \sim \mathcal{N}(\mu, \sigma^{2})$, 那么其pmf记为：</p><script type="math/tex; mode=display">f(x) = \frac{1}{\sqrt{2\pi \sigma^{2}}}\mathrm{exp}(-\frac{(x-\mu)^{2}}{2\sigma^{2}}),</script><p>其中，$\mu$和$\sigma$分别为均值和标准差。</p><p>对于任何一个高斯分布，都可以经过变换得到一个$\mu=0$且$\sigma=1$的标准高斯分布。</p><script type="math/tex; mode=display">\begin{aligned}    X &\sim \mathcal{N}(\mu, \sigma^{2}), \\    \frac{X-\mu}{\sigma} &\sim \mathcal{N}(0, 1).\end{aligned}</script><p>这个过程一般被叫做标准化。</p><p>接下来的t分布，卡方分布和F分布都是基于高斯分布。</p><h1 id="t分布"><a href="#t分布" class="headerlink" title="t分布"></a>t分布</h1><p>对于服从任意高斯分布的变量$X\sim \mathcal{N}(\mu, \sigma^{2})$，我们独立随机采样$n$次，记作$\{x_{1}, x_{2}, \dots, x_{n}\}$。</p><p>令样本均值为</p><script type="math/tex; mode=display">\bar{x}_{n} := \frac{x_{1} + x_{2} + \dots + x_{n}}{n}.</script><p>有中心极限定理，我们有</p><script type="math/tex; mode=display">\bar{x}_{n}\sim \mathcal{N}{(\mu, \frac{\sigma^{2}}{n})}.</script><p>随意，样本的均值也是一个随机变量，且也服从高斯分布。</p><p>接下来，我们对$\bar{x}_{n}$进行标准化，</p><script type="math/tex; mode=display">\frac{\bar{x}_{n} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0, 1).</script><p>然而对于样本而言，我们并不知道总体的$\sigma$，<br>我们只能通过样本进行推测。<br>样本方差为</p><script type="math/tex; mode=display">s^{2}_{n} = \frac{1}{n-1}\sum_{i=1}^{n}(x_{i} - \bar{x}_{n})^{2}.</script><p>我们用样本标准差替换总体标准差，并将得到的随机变量记作$T$。</p><script type="math/tex; mode=display">T := \frac{\bar{x}_{n} - \mu}{\frac{s_{n}}{\sqrt{n}}}</script><p>而这个随机变量$T$所服从的分布就是t分布。</p><p>t分布的形式与标准高斯分布很相似，但他的尾端更厚，也就是说，在分布两端的样本会更多。<br>这主要是因为，我们得到的$T$不是基于$\bar{x}_{n}$所服从分布的标准差的，而是基于样本估计的标准差。<br>而总体标准差是个常数，样本标准差则是个随机变量，这使得当样本数量很小的时候，$T$并不稳定。</p><p>t分布的一个很重要的应用便是T检测。<br>假设我们对总体的均值$\mu$感兴趣。我们先对$\mu$做一个猜测，<br>比如说假定为$\mu_{0}$。<br>那么我们把这个猜测称为零假设，</p><script type="math/tex; mode=display">H_{0} : \mu = \mu_{0}</script><p>我们并不知道也无法计算总体的均值是否真的为$\mu$。<br>但我们可以采样，并利用样本我们可以计算出样本均值$\bar{x}_{n}<br>$和样本方差 $ s_{n} $。<br>那么我们可以构建一个统计量</p><script type="math/tex; mode=display">\frac{\bar{x}_{n} - \mu_{0}}{\frac{s_{n}}{\sqrt{n}}}</script><p>这个时候，如果$H_{0}$是对的话，上面构建的统计量应该服从自由度为$n-1$的t分布。<br>如果计算出来的值在t分布很极端的位置，那么可以拒绝$H_{0}$，即我们猜测的$\mu$是不对的。</p><h1 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h1><p>t检验主要着眼于高斯分布的均值的检测。</p><p>假设我们关心数据的离散程度（方差）和异常情况。<br>进一步假设我们有很多独立的异常或者误差，并且这些偏差都服从标准高斯分布。<br>我们将这些误差记作：$\{Z_{1}, Z_{2}, \dots, Z_{n} \}$。</p><p>那么，总的误差应该真么表示呢？<br>我们可以定义如下的统计量</p><script type="math/tex; mode=display">Q:=Z^{2}_{1} + Z^{2}_{2} + \dots + Z^{2}_{n}</script><p>而$Q$就是服从卡方分布的随机变量。<br>卡方分布是多个独立标准高斯分布的和，一般表示总误差或者总波动。</p><p>最后，卡方分布的自由度是由独立相加的标准高斯分布的个数决定的，比如说上例的卡方分布的自由度就为$n$，记作$Q\sim \chi^{2}(n)$。</p><h1 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h1><p>基于卡方分布的定义，我们只能表示一组数据的总误差，我们将这个卡方随机变量记作$U\sim \chi^{2}(m)$。<br>如果我们还有一组数据，并且也得到一个总误差，我们将这个卡方随机记作$V\sim \chi^{2}(n)$。<br>我们是否能对两组数据的总误差进行比较呢？</p><p>答案是可以的，我们如下定义随机变量$F$：</p><script type="math/tex; mode=display">F := \frac{\frac{U}{m}}{\frac{V}{n}}，</script><p>其中$m$和$n$分别为自由度。</p><p>F分布的重要应用是方差齐性检验和方差分析（ANOVA）。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> statistic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Horvitz–Thompson估计量</title>
+      <link href="/2026/06/09/Horvitz%E2%80%93Thompson%20%E4%BC%B0%E8%AE%A1%E9%87%8F/"/>
+      <url>/2026/06/09/Horvitz%E2%80%93Thompson%20%E4%BC%B0%E8%AE%A1%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>对于某一个一维随机变量$X$，我们让它的观测$\bm{x} = \{x_{1}, x_{2}, \dots, x_{N}\}$为总体。<br>接下来，我们对$X$的这$n$个数据进行等概率随机抽样，获取大小为$n$的样本，记作：$\bm{y}:=\{y_{1}, y_{2}, \dots, y_{n}\}$。</p><p>我们一般通过抽样数据对总体进行估计。<br>例如我们要估计总体的均值我们一般，如下操作：</p><script type="math/tex; mode=display">\hat{\bar{y}} := \frac{\sum_{i:y_{i} \in \bm{y}}y_{i}}{n}.</script><p>但实际操作中，我们抽取的样本可能被选择的概率并不均等，或者有数据缺失的情况。<br>比如，极端情况下我们只能采样$y_{1}$或者$y_{1}$总被采样。<br>这种情况，总体的估计会完全受$y_{1}$影响而导致很高的标准误。</p><p>面对这个情况，我们需要用到Horvitz–Thompson估计量，通过加权对每个样本进行修正。</p><h1 id="估计量"><a href="#估计量" class="headerlink" title="估计量"></a>估计量</h1><script type="math/tex; mode=display">\hat{\bar{y}}_{HT} = \frac{1}{N}\sum_{i:y_{i} \in \bm{y}}\frac{y_{i}}{\pi_{i}},</script><p>其中$\pi_{i}$是$y_{i}$属于被抽样群体的概率(注意这里只写了$y_{i}$，实际上对于没被取样的样本也有对应的概率)。<br>注意，这里均值除的是总体的数量$N$，而不是样本的数量$n$。<br>我们将$\frac{1}{\pi_{i}}$看作$y_{i}$的权重的话，我们会得到</p><script type="math/tex; mode=display">\hat{\bar{y}}_{HT} = \frac{1}{N}\sum_{i:y_{i} \in \bm{y}}w_{i}y_{i},</script><p>这里，我们定义$w_{i}:=\frac{1}{\pi_{i}}$。<br>所以，这个定义方式也叫做逆概率加权。</p><h1 id="无偏估计"><a href="#无偏估计" class="headerlink" title="无偏估计"></a>无偏估计</h1><p>在进行逆概率加权之后，我们对样本进行了改变，此时加权后的样本能正确估计总体吗？</p><p>通过对估计量的期望值进行计算，</p><script type="math/tex; mode=display">\begin{aligned}\mathbb{E}[\hat{\bar{y}}_{HT}] &= \mathbb{E}[\frac{1}{N}\sum_{i:y_{i} \in \bm{y}}\frac{y_{i}}{\pi_{i}}] \\&= \mathbb{E}[\frac{1}{N}\sum_{j:x_{j} \in \bm{x}}\frac{x_{i}}{\pi_{j}} \delta(x_{i} \in \bm{y})] \\&=\frac{1}{N}\sum_{j:x_{j} \in \bm{x}}\frac{x_{i}}{\pi_{j}} \mathbb{E}[\delta(x_{j} \in \bm{y})] \\&=\frac{1}{N}\sum_{j:x_{j} \in \bm{x}}\frac{x_{i}}{\pi_{j}} \pi_{j} \\&= \frac{1}{N}\sum_{j:x_{j} \in \bm{x}}x_{i}\\&= \mathbb{E}[X].\end{aligned}</script><h1 id="分层采样"><a href="#分层采样" class="headerlink" title="分层采样"></a>分层采样</h1><p>我们对数据进行分割，记作，$U_{1}, U_{2}, \dots, U_{H}$，使得$U_{1}\cup U_{2}\cup \dots\cup U_{H} = \bm{x}$且$U_{i}\cap U_{j}= \emptyset$ for any $(U_{i}, U_{j})$。<br>如果我们对每一个区块都采样$n_{h}$的话，<br>对于来自不同的区块区块的样本，逆概率加权所需的概率为</p><script type="math/tex; mode=display">\pi_{i} = \frac{n_{h}}{\vert U_{i} \vert}, \text{for all } i \in [H].</script><!-- $p: \bigwedge_{x \in \bm{U}}P(x)$  --><!-- $\big(\bigwedge_{x \in \bm{U}}P(x)\big) \wedge \big(\bigvee_{a \in \bm{U}} \neg P(a) \big)$  -->]]></content>
+      
+      
+      <categories>
+          
+          <category> math basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> statistic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Bootstrap</title>
       <link href="/2025/09/17/Bootstrap/"/>
       <url>/2025/09/17/Bootstrap/</url>
       
-        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里写一些对于bootstrap的理解。<br>在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。</p><p>如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线性相关。当然，在假定随机变量是非高斯的时候，这个命题的逆命题一般并不成立。</p><p>我们也可以通过Wald Test来对回归出来的参数进行假说检验。当然，我们需要知道我们估计的这个参数的标准误差。</p><p>除了上述方法，bootstrap也是一种简单且神奇的方法。<br>这里写一些对于bootstrap的理解。</p><h1 id="概念图"><a href="#概念图" class="headerlink" title="概念图"></a>概念图</h1><p><img src="/2025/09/17/Bootstrap/bootstrap.png" alt="fig1 bootstrap的概念图"><br>这里的“Aggregation”也可以被认为是“Bagging”。</p><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><ol><li>Bootstrap 重采样：进行$B$次有放回的采样，每次采样的大小一般默认与原样本的大小一致。用每一采集到的样本进行参数估计。</li><li>构造置信区间：上一步中会得到的$B$个估计值。根据给定的显著水平（比如说，$\alpha = 0.05$），得到$\alpha / 2$和$1-(\alpha - 2)$分位点的估计值（双尾检验）。</li><li>判断是否显著：如果我们原假设的参数值（比如说，$H_{0}:\quad \theta = 0$）落入到了上一步骤求得两个分位点数据所构成的区间（置信区间）里面，则不拒绝原假设。反之，拒绝原假设。</li></ol><p>Note：这里的置信区间不对分布进行假设，而是直接用分位点法。</p><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里写一些对于bootstrap的理解。<br>在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。</p><p>如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线性相关。当然，在假定随机变量是非高斯的时候，这个命题的逆命题一般并不成立。</p><p>我们也可以通过Wald Test来对回归出来的参数进行假说检验。当然，我们需要知道我们估计的这个参数的标准误差。</p><p>除了上述方法，bootstrap也是一种简单且神奇的方法。<br>这里写一些对于bootstrap的理解。</p><h1 id="概念图"><a href="#概念图" class="headerlink" title="概念图"></a>概念图</h1><p><img src="/2025/09/17/Bootstrap/bootstrap.png" alt="fig1 bootstrap的概念图"><br>这里的“Aggregation”也可以被认为是“Bagging”。</p><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><ol><li>Bootstrap 重采样：进行$B$次有放回的采样，每次采样的大小一般默认与原样本的大小一致。用每一采集到的样本进行参数估计。</li><li>构造置信区间：上一步中会得到的$B$个估计值。根据给定的显著水平（比如说，$\alpha = 0.05$），得到$\alpha / 2$和$1-(\alpha - 2)$分位点的估计值（双尾检验）。</li><li>判断是否显著：如果我们原假设的参数值（比如说，$H_{0}:\quad \theta = 0$）落入到了上一步骤求得两个分位点数据所构成的区间（置信区间）里面，则不拒绝原假设。反之，拒绝原假设。</li></ol><p>Note：这里的置信区间不对分布进行假设，而是直接用分位点法。</p>]]></content>
       
       
       <categories>
@@ -62,7 +116,7 @@
       <link href="/2025/09/17/Central-Limit-Theorem-CLT/"/>
       <url>/2025/09/17/Central-Limit-Theorem-CLT/</url>
       
-        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里记录一些有关于中心极限定理的结论和推导</p><h1 id="中心极限定理的简单理解"><a href="#中心极限定理的简单理解" class="headerlink" title="中心极限定理的简单理解"></a>中心极限定理的简单理解</h1><p>中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取$n$个抽样，一共抽$m$次。<br>然后把这$m$组抽样分别求出平均值。 这些平均值的分布接近正态分布。</p><p>Note:<br>样本均值这一统计量会服从正态分布</p><h1 id="标准形式定义"><a href="#标准形式定义" class="headerlink" title="标准形式定义"></a>标准形式定义</h1><p>设 $X_{1}, X_{2}, \cdots, X_{n}$ 是一组i.i.d的随机变量，每个随机变量具有有限的数学期望$E [X_{i}] = \mu$ 和有限的方差 $ Var(X_{i})=\sigma^{2}$，当样本量$n$足够大时，样本均值</p><script type="math/tex; mode=display">\bar{X}_{n} = \frac{1}{n}\sum^{n}_{i=1}X_{i}</script><p>的标准形式</p><script type="math/tex; mode=display">Z_{n} = \frac{\bar{X}_{n} - \mu}{\frac{\sigma}{n}}</script><p>在分布上收敛于标准正态分布，即：</p><script type="math/tex; mode=display">Z_{n} \stackrel{d}{\to} {\cal N}(0, 1), \quad s.t.  \quad n \to  \infty,</script><p>或者</p><script type="math/tex; mode=display">\bar{X}_{n}  \approx {\cal N}(\mu, \frac{\sigma^{2}}{n}), \quad s.t.  \quad n \to  \infty</script>]]></content>
+        <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里记录一些有关于中心极限定理的结论和推导</p><h1 id="中心极限定理的简单理解"><a href="#中心极限定理的简单理解" class="headerlink" title="中心极限定理的简单理解"></a>中心极限定理的简单理解</h1><p>中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取$n$个抽样，一共抽$m$次。<br>然后把这$m$组抽样分别求出平均值。 这些平均值的分布接近正态分布。</p><p>Note:<br>样本均值这一统计量会服从正态分布</p><h1 id="标准形式定义"><a href="#标准形式定义" class="headerlink" title="标准形式定义"></a>标准形式定义</h1><p>设 $X_{1}, X_{2}, \cdots, X_{n}$ 是一组i.i.d的随机变量，每个随机变量具有有限的数学期望$E [X_{i}] = \mu$ 和有限的方差 $ Var(X_{i})=\sigma^{2}$，当样本量$n$足够大时，样本均值</p><script type="math/tex; mode=display">\bar{X}_{n} = \frac{1}{n}\sum^{n}_{i=1}X_{i}</script><p>的标准形式</p><script type="math/tex; mode=display">Z_{n} = \frac{\bar{X}_{n} - \mu}{\frac{\sigma}{\sqrt{n}}}</script><p>在分布上收敛于标准正态分布，即：</p><script type="math/tex; mode=display">Z_{n} \stackrel{d}{\to} {\cal N}(0, 1), \quad s.t.  \quad n \to  \infty,</script><p>或者</p><script type="math/tex; mode=display">\bar{X}_{n}  \approx {\cal N}(\mu, \frac{\sigma^{2}}{n}), \quad s.t.  \quad n \to  \infty</script>]]></content>
       
       
       <categories>
