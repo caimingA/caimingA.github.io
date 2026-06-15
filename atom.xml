@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2026-06-10T13:22:11.557Z</updated>
+  <updated>2026-06-15T17:17:29.152Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -17,11 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>EM算法</title>
+    <link href="http://caiminga.github.io/2026/06/16/EM%E7%AE%97%E6%B3%95/"/>
+    <id>http://caiminga.github.io/2026/06/16/EM%E7%AE%97%E6%B3%95/</id>
+    <published>2026-06-15T17:17:37.000Z</published>
+    <updated>2026-06-15T17:17:29.152Z</updated>
+    
+    
+    
+    
+    <category term="machine learning" scheme="http://caiminga.github.io/categories/machine-learning/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="ML" scheme="http://caiminga.github.io/tags/ML/"/>
+    
+    <category term="statistic" scheme="http://caiminga.github.io/tags/statistic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MLE与MAP</title>
+    <link href="http://caiminga.github.io/2026/06/16/MLE%E4%B8%8EMAP/"/>
+    <id>http://caiminga.github.io/2026/06/16/MLE%E4%B8%8EMAP/</id>
+    <published>2026-06-15T17:11:37.000Z</published>
+    <updated>2026-06-15T17:17:17.678Z</updated>
+    
+    
+    
+    
+    <category term="math basic" scheme="http://caiminga.github.io/categories/math-basic/"/>
+    
+    
+    <category term="math" scheme="http://caiminga.github.io/tags/math/"/>
+    
+    <category term="ML" scheme="http://caiminga.github.io/tags/ML/"/>
+    
+    <category term="statistic" scheme="http://caiminga.github.io/tags/statistic/"/>
+    
+  </entry>
+  
+  <entry>
     <title>t分布，卡方分布，F分布</title>
     <link href="http://caiminga.github.io/2026/06/10/t%E5%88%86%E5%B8%83%EF%BC%8C%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83%EF%BC%8CF%E5%88%86%E5%B8%83/"/>
     <id>http://caiminga.github.io/2026/06/10/t%E5%88%86%E5%B8%83%EF%BC%8C%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83%EF%BC%8CF%E5%88%86%E5%B8%83/</id>
     <published>2026-06-10T05:52:25.000Z</published>
-    <updated>2026-06-10T13:22:11.557Z</updated>
+    <updated>2026-06-15T17:17:42.461Z</updated>
     
     
       
@@ -408,11 +450,11 @@
   </entry>
   
   <entry>
-    <title>monte carlo</title>
+    <title>蒙特卡罗与MCMC</title>
     <link href="http://caiminga.github.io/2022/06/18/monte-carlo/"/>
     <id>http://caiminga.github.io/2022/06/18/monte-carlo/</id>
     <published>2022-06-17T15:16:08.000Z</published>
-    <updated>2022-06-17T22:13:46.071Z</updated>
+    <updated>2026-06-15T17:22:59.419Z</updated>
     
     
       

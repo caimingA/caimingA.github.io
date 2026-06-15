@@ -41,10 +41,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/41.jpg); */ 
+       /* background-image: url(/medias/featureimages/6.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/41.jpg); */
+       /* background-image: url(/medias/featureimages/6.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -542,6 +542,7 @@ H_{0} : \mu = \mu_{0}</script><p>我们并不知道也无法计算总体的均�
 <script type="math/tex; mode=display">
 Q:=Z^{2}_{1} + Z^{2}_{2} + \dots + Z^{2}_{n}</script><p>而$Q$就是服从卡方分布的随机变量。<br>卡方分布是多个独立标准高斯分布的和，一般表示总误差或者总波动。</p>
 <p>最后，卡方分布的自由度是由独立相加的标准高斯分布的个数决定的，比如说上例的卡方分布的自由度就为$n$，记作$Q\sim \chi^{2}(n)$。</p>
+<p>卡方分布的一个重要应用是卡方检验。</p>
 <h1 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h1><p>基于卡方分布的定义，我们只能表示一组数据的总误差，我们将这个卡方随机变量记作$U\sim \chi^{2}(m)$。<br>如果我们还有一组数据，并且也得到一个总误差，我们将这个卡方随机记作$V\sim \chi^{2}(n)$。<br>我们是否能对两组数据的总误差进行比较呢？</p>
 <p>答案是可以的，我们如下定义随机变量$F$：</p>
 <script type="math/tex; mode=display">
@@ -928,18 +929,17 @@ F := \frac{\frac{U}{m}}{\frac{V}{n}}，</script><p>其中$m$和$n$分别为自�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2026/06/10/t%E5%88%86%E5%B8%83%EF%BC%8C%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83%EF%BC%8CF%E5%88%86%E5%B8%83/">
+                <a href="/2026/06/16/MLE%E4%B8%8EMAP/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="t分布，卡方分布，F分布">
+                        <img src="/medias/featureimages/52.jpg" class="responsive-img" alt="MLE与MAP">
                         
-                        <span class="card-title">t分布，卡方分布，F分布</span>
+                        <span class="card-title">MLE与MAP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -949,9 +949,9 @@ F := \frac{\frac{U}{m}}{\frac{V}{n}}，</script><p>其中$m$和$n$分别为自�
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-10
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-06-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -964,12 +964,15 @@ F := \frac{\frac{U}{m}}{\frac{V}{n}}，</script><p>其中$m$和$n$分别为自�
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/math/">
                         <span class="chip bg-color">math</span>
+                    </a>
+                    
+                    <a href="/tags/ML/">
+                        <span class="chip bg-color">ML</span>
                     </a>
                     
                     <a href="/tags/statistic/">

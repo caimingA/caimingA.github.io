@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="monte carlo, CM&#39;s SPACE">
-    <meta name="description" content="简述蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。与大数定律和中心极限定理有一定的相似之处。
+    <meta name="keywords" content="蒙特卡罗与MCMC, CM&#39;s SPACE">
+    <meta name="description" content="简述蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。
 另外蒙特卡罗并不是人的名字，而是位于摩纳哥的一个赌场的名字。
-简单的例子最经典的例子应该是几何概型中的算$\pi$的数值。也就是高中课">
+简单的例子最经典的例子应该是几何概型中的算$\pi$的数值。也就是高中课本上的撒豆子问题。
+通过多次随机取样，取样">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>monte carlo | CM&#39;s SPACE</title>
+    <title>蒙特卡罗与MCMC | CM&#39;s SPACE</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -42,10 +43,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/41.jpg); */ 
+       /* background-image: url(/medias/featureimages/6.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/41.jpg); */
+       /* background-image: url(/medias/featureimages/6.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -333,12 +334,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/60.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">monte carlo</h1>
+                    <h1 class="description center-align post-title">蒙特卡罗与MCMC</h1>
                 </div>
             </div>
         </div>
@@ -511,9 +512,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。与大数定律和中心极限定理有一定的相似之处。<br></p>
+                <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。</p>
 <p>另外蒙特卡罗并不是人的名字，而是位于摩纳哥的一个赌场的名字。</p>
-<h2 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h2><p>最经典的例子应该是几何概型中的算$\pi$的数值。也就是高中课本上的撒豆子问题。<br></p>
+<h2 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h2><p>最经典的例子应该是几何概型中的算$\pi$的数值。也就是高中课本上的撒豆子问题。</p>
 <p>通过多次随机取样，取样点会随机分布在一个正方形的区域里，然后在该区域中画圆，就会是样本分成两部分。一部分在圆内，另一部分在圆外。然后通过算圆内的样本数占总样本数的比例可以近似算的圆的面积，最后通过圆面积公式能算得$\pi$的取值。</p>
 <h3 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h3><blockquote>
 <script type="math/tex; mode=display">
@@ -545,8 +546,267 @@ plt<span class="token punctuation">.</span>scatter<span class="token punctuation
 
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/2022/06/18/monte-carlo/20220618_01.png" alt="fig1 例子"></p>
-<p><br></p>
 <p>随着$sampleNum$的增大，最终结果应该会越来越接近3.14。</p>
+<h2 id="蒙特卡罗求积分"><a href="#蒙特卡罗求积分" class="headerlink" title="蒙特卡罗求积分"></a>蒙特卡罗求积分</h2><p>对于一个函数$f(x)$,我们想在求这个函数在$x\in [a, b]$上的积分。我们会发现它的积分可能会比较难显式地求出来。这个时候我们可以通过蒙特卡罗的方法将他取样出来。</p>
+<p>比如说我们现在打算求$f(x)$的积分，姑且假定在区间$x \in [a, b]$上，$f(x) \ge 0$。此时，我们可以设定一个上界$U \ge \mathrm{sup}_{x \in [a, b]} f(x)$。<br>然后随机从均匀分布$X \sim \mathrm{Unif}(a, b)$和$Y \sim \mathrm{Unif}(0, U)$上采样$\{x_{i}, x_{j}\}$。当样本数量足够大的时候，</p>
+<script type="math/tex; mode=display">
+\int_{a}^{b}f(x)dx = \frac{\sum_{\{x_{i}, y_{i}\}}\delta_{(y_{i} \le f(x_{i}))}}{N_{tol}}</script><p><img src="/2022/06/18/monte-carlo/20260615.gif" alt="fig2 求积分"></p>
+<p>上面的过程中，我们需要对两个变量进行采样，那么是否可以只对一个变量进行采样的方法呢？</p>
+<p>回想一下黎曼积分的思想，我们可以将积分看作在$x$轴上进行均匀地切割，然后把对应的函数值加在一起。基于类似的思想，我们可以只对$X\sim \mathrm{Unif}(a, b)$进行采样，采样结果记作$\{x_{i}\}_{N}$。<br>此时，我们可以</p>
+<script type="math/tex; mode=display">
+\int_{a}^{b} f(x) dx = \sum_{i}^{N}f(x_{i}) \frac{b-a}{N},</script><p>其中$\frac{b-a}{N}$可以看作均匀切割后的每一段的长度，其实可以对应积分中的$dx$。<br>通过这种方法，我们不再需要对$Y$进行采样。</p>
+<h2 id="蒙特卡罗求期望"><a href="#蒙特卡罗求期望" class="headerlink" title="蒙特卡罗求期望"></a>蒙特卡罗求期望</h2><p>对于一个函数$f(x)$,我们想在求这个函数在$x$上的期望$\mathbb{E}_{x\sim\pi(x)}[f(x)]$，其中$\pi(x)$是随机变量$X$服从的分布的概率密度函数或者分布律。<br>根据期望的定义我们有</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{x\sim \pi(x)}[f(x)] = \int_{x}\pi(x)f(x) dx.</script><p>假设我们对$X$进行采样，样本记作$\{x_{i}\}_{N}$。<br>根据大数定律，则有</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{x\sim \pi(x)}[f(x)] = \frac{1}{N}\sum_{i}^{N}f(x_{i}).</script><p>举例来讲，如果现在$X \sim \mathrm{Unif}(a, b)$，<br>那么</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{x\sim \pi(x)}[f(x)] = \int_{x}\frac{1}{b-a}f(x) dx = \frac{1}{N}\sum_{i}^{N}f(x_{i}).</script><h3 id="重要性采样"><a href="#重要性采样" class="headerlink" title="重要性采样"></a>重要性采样</h3><p>有的时候直接从目标分布（注意，这个分布是已知的）采样非常困难，代价高昂，或者一定样本的到的精度不高时。<br>我们可以引入一个容易采样的建议分布（Proposal Distribution），并赋予每个样本相应的权重，来无偏地估计目标分布的期望值。</p>
+<p>假设我们选择的易于采样的建议分布的pdf为$q(x)$，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{E}_{x\sim \pi(x)}[f(x)] &= \int_{x}\pi(x)f(x) dx\\
+&= \int_{x}q(x)\frac{\pi(x)}{q(x)}f(x) dx \\
+&= \mathrm{E}_{x \sim q(x)}\left[\frac{\pi(x)}{q(x)}f(x)\right].
+\end{aligned}</script><p>如果我们把$\frac{\pi(x)}{q(x)}$定义为$w(x)$，那么</p>
+<script type="math/tex; mode=display">
+\mathrm{E}_{x \sim q(x)}\left[\frac{\pi(x)}{q(x)}f(x)\right] = \mathrm{E}_{x \sim q(x)}\left[w(x)f(x)\right]</script><p>可以看作我们在建议分布上采样的时候，目标函数$f(x)$的值要乘上一个权重$w(x)$。<br>对于不同的$x$，权重不同，说明对应的$f(x)$的重要性不同，这个便是该小节标题中“重要性”的来源。</p>
+<p>对$X$进行采样之后，再次根据大数定律，</p>
+<script type="math/tex; mode=display">
+\mathrm{E}_{x \sim q(x)}\left[w(x)f(x)\right] = \frac{1}{N}\sum_{i}^{N}w(x_{i})f(x_{i}).</script><p>与上面的直观理解相似，“重要性”体现在，对于不同$x_{i}$，权重$w(x_{i})$不同，$f(x_{i})$的”贡献“自然不同。<br>对上面的式子中，我们需要注意的是，目标分布$\pi(x)$，我们选取的建议分布$q(x)$和目标函数$f(x)$都是已知的。我们只是想通过采样之后得到$f(x)$的期望。</p>
+<h3 id="拒绝采样"><a href="#拒绝采样" class="headerlink" title="拒绝采样"></a>拒绝采样</h3><p>重要性采样是对目标函数$f(x)$添加权重，但我们的得到的样本$\{x_{i}\}_{N}$是服从建议分布的，而不是服从目标分布。<br>那我们是否有办法真正的得到从目标分布中采样的来的样本呢？<br>答案是肯定的。</p>
+<p>因为目标分布的直接采样困难，<br>在拒绝采样的过程中，我们还是要先选取一个易于采样的建议分布$q(x)$。<br>与重要性采样不同的是，我们还要选取一个常数$M$，使得</p>
+<script type="math/tex; mode=display">
+M\cdot q(x) \ge \pi(x).</script><p>自然，我们接下来应该做的是直接从$q(x)$中采样。<br>在重要性采样中，我们对于没一个采到的样本都保留下来，进行利用。<br>而在拒绝采样中，对于采到的样本$x_{i}$，我们以$\alpha_{\mathrm{accept}}$的概率进行保留。自然以$\alpha_{\mathrm{reject}} = 1 - \alpha_{\mathrm{accept}}$的概率丢弃。</p>
+<p>对于$x_{i}$接受概率的计算：</p>
+<script type="math/tex; mode=display">
+\alpha_{\mathrm{accept}} = \frac{\pi(x_{i})}{M\cdot q(x_{i})}.</script><p>为了实现概率接受和概率丢弃，我们可以随机生成一个服从$\mathrm{Unif}(0, 1)$的随机数$u$，如果$u$落在$[0, \alpha_{\mathrm{accept}}]$，$x_{i}$就会被接受，反之，如果$u \in (\alpha_{\mathrm{accept}}, 1]$，$x_{i}$便会被丢弃。</p>
+<p>拒绝采样的直觉理解是很简单的，</p>
+<p><img src="/2022/06/18/monte-carlo/20260615_1.png" alt="fig3 拒绝采样"></p>
+<p>图中，$\tilde{p}(z)$便是目标分布（即，本文中的$\pi(x)$）。$k$和$q(z)$为选取的$M$和$q(x)$。<br>对与样本$z_{0}$而言，$z_0$在$\tilde{p}(z)$中被采集到的可能性比上在$kq(z)$中被采集到的可能性应该为两个pdf在$z_{0}$处的高度比。</p>
+<h2 id="MCMC"><a href="#MCMC" class="headerlink" title="MCMC"></a>MCMC</h2><p>拒绝采样适用于低维简单分布，而 MCMC 专为高维复杂分布设计，通过构建马尔可夫链使其平稳分布收敛于目标分布。<br>MCMC采样很神奇的点在于，每次采样的时候不是完全独立，而是上一个采样的样本会对下一采样的样本有一定约束。</p>
+<h3 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h3><p>对于一组随机变量$\boldsymbol{X} = \{X_{t}\}_{t \ge 0}$，其中$t$代表时刻，如果有</p>
+<script type="math/tex; mode=display">
+P(X_{t} \mid \{X_{t}\}_{0 \le t \le t-1}) = P(X_{t} \mid X_{t-1}),</script><p>那么，称$\boldsymbol{X} = \{X_{t}\}_{t \ge 0}$为马尔可夫链。<br>进一步，$P(X_{t}\mid X_{t-1})$被称为$X_{t-1}$到$X_{t}$的转移概率分布。</p>
+<p>例如，我们在这里假设$\boldsymbol{X}_{\le t} = \{X_{t}\}_{\le t} \in [1, 2, 3]^{(t+1)}$，<br>我们定义</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol{P} = 
+\left[
+\begin{array}{ccc}
+p_{11} & p_{12} & p_{13} \\
+p_{21} & p_{22} & p_{23} \\
+p_{31} & p_{32} & p_{33}
+\end{array}
+\right],
+\end{aligned}</script><p>其中，$P_{ji} = P(X_{t}=j \mid X_{t-1}=i)$。<br>我们称上述的矩阵为转移概率矩阵。</p>
+<p>我们进一步定义</p>
+<script type="math/tex; mode=display">
+\pi(t) = [\pi_{1}(t), \pi_{2}(t), \pi_{3}(t)]^{\top},</script><p>为$t$时刻的状态分布，<br>其中$\pi_{i}(t) = P(X_{t}=i)$。<br>$\pi(t) = [\pi_{1}(t), \pi_{2}(t), \pi_{3}(t)]$即为$t$时刻目标分布的分布律（这里考虑的是离散的情况）。<br>同时，$\pi_{t}$还可以写作</p>
+<script type="math/tex; mode=display">
+\pi(t)^{\top} = \pi(0)^{\top}P^{t}.</script><p>我们都知道，对于一个转移过程，若</p>
+<script type="math/tex; mode=display">
+\pi(t)^{\top} = \pi(t)^{\top}P，</script><p>则称$\pi(t)$是马尔可夫链的平稳分布。</p>
+<p>一个马尔可夫链拥有唯一平稳分布通常需要具备一下三点性质：</p>
+<ul>
+<li>不可约性（Irreducible）：系统中的任何一个状态都可以通过有限步转移到达其他所有状态。</li>
+<li>非周期性（Aperiodic）：系统从某状态出发，返回该状态的可能步数不具有公约数，避免了系统出现死循环振荡。</li>
+<li>正常返性（Positive Recurrent）：系统平均返回到某一状态的时间是有限的。</li>
+</ul>
+<p>最后，我们定义一种特殊的马尔可夫链。</p>
+<p>对于任意时刻$t$，如果一个马尔可夫链满足细致平衡方程（detailed balance equation）:</p>
+<script type="math/tex; mode=display">
+\forall i \forall j, \qquad p_{ji}\pi_{i} = p_{ij}\pi_{j},</script><p>则称该马尔可夫链为可逆马尔可夫链。</p>
+<blockquote>
+<p><strong>定理 1</strong>  <br>满足细致平衡方程的状态分布$\pi$是该马尔可夫链的平稳分布。</p>
+</blockquote>
+<h3 id="MCMC采样"><a href="#MCMC采样" class="headerlink" title="MCMC采样"></a>MCMC采样</h3><p>如<strong>定理1</strong>所言，我们只要能找到一个满足细致平衡方程的$\boldsymbol{P}$，那么，马尔可夫转移每次选择的状态（在本文中为1 or 2 or 3）可以作为采的样本，并且该样本符合目标分布$\pi$。</p>
+<p>接下来的问题变成如何去寻找满足条件的$\boldsymbol{P}$。</p>
+<p>我们可以先任取一个转移矩阵$\boldsymbol{Q}$。此时我们一般有</p>
+<script type="math/tex; mode=display">
+\pi_{i}q_{ji} \ne \pi_{j}q_{ij}.</script><p>但我们可以在不等式两边进行适当缩放，然后不等式变为等式</p>
+<script type="math/tex; mode=display">
+\pi_{i}q_{ji}\alpha_{ji} = \pi_{j}q_{ij}\alpha_{ij},</script><p>其中$\alpha_{ji}$和$\alpha_{ij}$为缩放系数。</p>
+<p>进一步，要是等式恒成立，我们可以简单地令</p>
+<script type="math/tex; mode=display">\alpha_{ji} =  \pi_{j}q_{ij}, \qquad \alpha_{ij} =  \pi_{i}q_{ji}.</script><p>此时，等式两边都为$\pi_{j}\cdot q_{ij}\cdot \pi_{i}\cdot q_{ji}$。</p>
+<p>最后，如果我们把<br>$\alpha_{i}q_{ji}$看作$\tilde{q}_{ji}$，$\alpha_{j}q_{ij}$看作$\tilde{q}_{ij}$，便得到了细致平衡方程</p>
+<script type="math/tex; mode=display">
+    \pi_{i}\tilde{q}_{ji} = \pi_{j}\tilde{q}_{ij}.</script><p>注意这里的平稳分布是$\pi_{i}$和$\pi_{j}$，但是$\tilde{q}_{ji}$和$\tilde{q}_{ij}$并未进行归一化，所以应该不能是一个合理的转移矩阵。</p>
+<p>那么，我们是否还可以用$\widetilde{\boldsymbol{Q}}$来进行采样呢？<br>答案是可以的。<br>实际上，我们可以这么定义$p_{ji}$和$\tilde{q}_{ji}$:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    p_{ji} = 
+    \left\{
+    \begin{array}{ll}
+        \tilde{q}_{ji}, & i \ne j, \\
+        \tilde{q}_{ji} + (1 - \sum_{j \in \mathrm{supp}(\boldsymbol{X})}\tilde{q}_{ji}), & j = i.
+    \end{array}
+    \right.
+\end{aligned}</script><p>等价的</p>
+<script type="math/tex; mode=display">
+p_{ji} = \tilde{q}_{ji} + (1 - \sum_{j \in \mathrm{supp}(\boldsymbol{X})}\tilde{q}_{ji})\delta_{i=j}.</script><p>直觉上，我们可以认为当两次采样的状态（值）不一样的时候，直接用$\tilde{q}_{ji}$代替$p_{ji}$，而当$i=j$的时候，我们在用$\tilde{q}_{ii}$代替$p_{ii}$的基础上，还加入了让$\sum_{j \in \mathrm{supp}(\boldsymbol{X})}\tilde{q}_{ji}$与$1$的差值。<br>这样子我们便得到了一个归一化的$p_{ji}$了。</p>
+<p>至于这样的$p_{ji}$是否满足细致平稳呢？<br>我们发现，对于任意$\pi_{i}$，$\pi_{j}$，$f_{i, j}$，和$f_{j,i}$都有</p>
+<script type="math/tex; mode=display">
+f_{i, j}\delta_{i=j}\pi_{i} = f_{j, i}\delta_{i=j}\pi_{j}.</script><p>具体来说，当$i \ne j$时，上式必然成立。当$i = j$的时候，$f_{i, i}\pi_{i} = f_{j, j}\pi_{j}$也是必然成立的。<br>所以，当$\widetilde{\boldsymbol{Q}}$满足细致平衡条件的时候，多出来的$i=j$的项并不影响$\boldsymbol{P}$也满足细致平衡条件。</p>
+<p>一言蔽之就是说，<strong>通过调整转移矩阵的对角线元素可以完成归一化，并且不影响细致平稳条件的成立。</strong></p>
+<h3 id="Metropolis算法"><a href="#Metropolis算法" class="headerlink" title="Metropolis算法"></a>Metropolis算法</h3><p>接下来写一下到目前为止的算法。<br>我们的目标实在满足细致平衡条件的$\widetilde{\boldsymbol{Q}}$上采样，如果$\widetilde{\boldsymbol{Q}}$比较难以采样，我们便在容易采样的$\boldsymbol{Q}$上采样。<br>注意，$\widetilde{q}_{ji}$和${q}_{ji}$差一个$\alpha_{ji}$的倍数。<br>当我们通过${q}_{ji}$从状态$i$选择状态$j$的时候，如果$i \ne j$，我们会发现我们实际上需要的选择的概率为$\tilde{q}_{ji}$。<br>与拒绝采样相似，$\alpha_{ji}$可以被看作是一个接受概率。<br>换言之，当我们处于$i$状态，而下一个被选择的状态是与$i$不同的$j$的时候，我们以概率$\alpha_{ji}$接受这个选择，以$1-\alpha_{ji}$的概率拒绝这个选择。<br>当我们拒绝选择状态$j$的时候，我们会留在状态$i$，即，有采样了一次$i$。</p>
+<p>需要注意的是，我们由状态$i$到状态$i$时的接受率并不是$\alpha_{ii}$而是$1-\alpha_{ji}$。<br>这就是之前所讲的，通过调整转移矩阵的对角线元素可以完成归一化，实现最终以$p_{ji}$进行转移。</p>
+<p>最后，Metropolis算法总结如下</p>
+<blockquote>
+<h2 id="Metropolis采样"><a href="#Metropolis采样" class="headerlink" title="Metropolis采样   "></a><strong>Metropolis采样</strong>   </h2><p>初始状态的$x_{0}$, t时刻状态为$x_{t}$。<br>通过如下流程采样样本$x_{t+1}$:</p>
+<ol>
+<li>通过$q_{t+1, t}$采样一个样本$x^{*}_{t+1}$。</li>
+<li>从$\mathrm{Unif}(0, 1)$中，生成一个随机数$u$。</li>
+<li>如果$u \le \alpha_{t+1, t}$，$x_{t+1} \gets \alpha_{t+1, t} \cdot x^{*}_{t+1}$；否则，$x_{t+1} \gets x_{t}$。</li>
+</ol>
+</blockquote>
+<p>这个算法与拒绝采样相似，但不完全一直。<br>拒绝采样中如果样本被拒绝那就是拒绝了，但Metropolis算法的话，会把原地踏步把目前的状态计入时刻$t$的样本。</p>
+<h3 id="Metropolis-Hastings-采样"><a href="#Metropolis-Hastings-采样" class="headerlink" title="Metropolis-Hastings 采样"></a>Metropolis-Hastings 采样</h3><p>通过$\alpha_{ji}$来接受拒绝下一个状态的选择其实会面临一个问题。<br>如果$\alpha_{ji}$太小，那采样会一直原地踏步，无法对其他状态进行探索。</p>
+<p>为了解决这个问题，我们先回到细致平稳方程</p>
+<script type="math/tex; mode=display">
+\pi_{i}q_{ji}\alpha_{ji} = \pi_{j}q_{ij}\alpha_{ij}.</script><p>正如我前面所说，$\alpha_{ji}$和$\alpha_{ij}$是一个缩放，那么我们能否在这个式子的基础上，左右两边再同乘上一个常数$c_{i}$，让$c_{i}\cdot \alpha_{ji}$来作为接受率呢？<br>显然是可以的，但是接受率一定要是一个介于0到1之间的数，我们再乘上$c_{i}$之后，$c_{i}\cdot \alpha_{ji}$和$c_{i}\cdot \alpha_{ij}$都不能超多一。<br>对于$c_{i}\cdot \alpha_{ji}$，我们何时可以将它缩放到最大呢？<br>当$c_{i}\cdot \alpha_{ji} = 1$或者$c_{i}\cdot \alpha_{ij}=1$的时候。</p>
+<p>令$\mathcal{A}_{ji}:=c_{i}\cdot \alpha_{ji}$，则有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal{A}_{ji} =
+\left\{
+\begin{array}{ll}
+1, & \alpha_{ji} \ge \alpha_{ij},\\
+\frac{\pi_{j}q_{ij}}{\pi_{i}q_{ji}}, & \alpha_{ji} < \alpha_{ij}.
+\end{array}
+\right.
+\end{aligned}</script><p>最后，我们只需要让新的接受率</p>
+<script type="math/tex; mode=display">
+\mathcal{A}_{ji} = \mathrm{min}(1, \frac{\pi_{j}q_{ij}}{\pi_{i}q_{ji}})</script><p>就好。</p>
+<p>如果，$q_{ij} = q_{ji}$，<br>则</p>
+<script type="math/tex; mode=display">
+\mathcal{A}_{ji} = \mathrm{min}(1, \frac{\pi_{j}}{\pi_{i}})</script><blockquote>
+<h2 id="Metropolis-Hastings-采样-1"><a href="#Metropolis-Hastings-采样-1" class="headerlink" title="Metropolis-Hastings 采样  "></a><strong>Metropolis-Hastings 采样</strong>  </h2><p>初始状态的$x_{0}$, t时刻状态为$x_{t}$。<br>通过如下流程采样样本$x_{t+1}$:</p>
+<ol>
+<li>通过$q_{t+1, t}$采样一个样本$x^{*}_{t+1}$。</li>
+<li>从$\mathrm{Unif}(0, 1)$中，生成一个随机数$u$。</li>
+<li>如果$u \le \mathcal{A}_{t+1, t}=\mathrm{min}(1, \frac{\pi_{t+1}q_{t, t+1}}{\pi_{t}q_{t+1, t}})$，$x_{t+1} \gets \alpha_{t+1, t} \cdot x^{*}_{t+1}$；否则，$x_{t+1} \gets x_{t}$。</li>
+</ol>
+</blockquote>
+<p>一段M-H采样高斯分布的python 代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
+<span class="token keyword">import</span> math
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> norm
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token keyword">def</span> <span class="token function">norm_dist_prob</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    y <span class="token operator">=</span> norm<span class="token punctuation">.</span>pdf<span class="token punctuation">(</span>theta<span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> scale<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> y
+
+T <span class="token operator">=</span> <span class="token number">5000</span>
+pi <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">]</span>
+sigma <span class="token operator">=</span> <span class="token number">1</span>
+t <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> t <span class="token operator">&lt;</span> T<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> t <span class="token operator">+</span> <span class="token number">1</span>
+    pi_star <span class="token operator">=</span> norm<span class="token punctuation">.</span>rvs<span class="token punctuation">(</span>loc<span class="token operator">=</span>pi<span class="token punctuation">[</span>t <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> scale<span class="token operator">=</span>sigma<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>   <span class="token comment">#状态转移进行随机抽样</span>
+    alpha <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>norm_dist_prob<span class="token punctuation">(</span>pi_star<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> norm_dist_prob<span class="token punctuation">(</span>pi<span class="token punctuation">[</span>t <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment">#alpha值</span>
+
+    u <span class="token operator">=</span> random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> u <span class="token operator">&lt;</span> alpha<span class="token punctuation">:</span>
+        pi<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">=</span> pi_star<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        pi<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">=</span> pi<span class="token punctuation">[</span>t <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>pi<span class="token punctuation">,</span> norm<span class="token punctuation">.</span>pdf<span class="token punctuation">(</span>pi<span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> scale<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'Target Distribution'</span><span class="token punctuation">,</span> c<span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">)</span>
+num_bins <span class="token operator">=</span> <span class="token number">50</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>pi<span class="token punctuation">,</span> num_bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> facecolor<span class="token operator">=</span><span class="token string">'green'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'Samples Distribution'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="吉布斯采样（Gibbs-Sampling）"><a href="#吉布斯采样（Gibbs-Sampling）" class="headerlink" title="吉布斯采样（Gibbs Sampling）"></a>吉布斯采样（Gibbs Sampling）</h3><p>接下来，我们看看更现实的应用场景，高维数据的情况。</p>
+<p>假设$\boldsymbol{X}_{t}= \{X_{t, 1}, X_{t, 2}, \cdots, X_{t, d}\}$是一个$d$维的随机变量。<br>Gibbs采样每个时刻$t$，只对$d$维中的一维进行采样。<br>比如说我们接下来要对第$h$维采样，我们将时刻$t+1$的样本记作$\boldsymbol{X}_{t+1} = \boldsymbol{X}_{t, [X_{t, h}=X_{t+1, h}]}$<br>，我们定义转移概率（这里的多维变量，我们用最稳妥的写法）为</p>
+<script type="math/tex; mode=display">
+q(\boldsymbol{X}_{t+1} \mid \boldsymbol{X}_{t}) = P(X_{t+1, h} \mid \boldsymbol{X}_{t, -h})= \frac{P(\boldsymbol{X}_{t, [X_{t, h}=X_{t+1, h}]})}{P(\boldsymbol{X}_{t, -h})},</script><p>其中$\boldsymbol{X}_{t, -h} = \boldsymbol{X}_{t} \setminus \{X_{t, h}\}$。<br>这个式子意味着，我们每次固定第$h$维以外的维度的取值，然后只更新第$h$维的取值。<br>然后，我们定义接受率</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal{A}_{t+1, t} &:= \mathrm{min}\left(1, \frac{P(\boldsymbol{X}_{t+1})q(\boldsymbol{X}_{t}\mid \boldsymbol{X}_{t+1})}{P(\boldsymbol{X}_{t})q(\boldsymbol{X}_{t+1}\mid \boldsymbol{X}_{t})}\right) \\
+&= \mathrm{min}\left(1, \frac{P(\boldsymbol{X}_{t, [X_{t, h}=X_{t+1, h}]})P(X_{t, h} \mid \boldsymbol{X}_{t, -h})}{P(\boldsymbol{X}_{t})P(X_{t, h} \mid \boldsymbol{X}_{t, -h})}\right) \\
+&= \mathrm{min}\left(1, \frac{P(\boldsymbol{X}_{t, [X_{t, h}=X_{t+1, h}]})P(X_{t, h} \mid \boldsymbol{X}_{t, -h})P(\boldsymbol{X}_{t, -h})}{P(\boldsymbol{X}_{t})P(\boldsymbol{X}_{t, [X_{t, h}=X_{t+1, h}]})}\right) \\
+&= \mathrm{min}\left(1, \frac{P(\boldsymbol{X}_{t, [X_{t, h}=X_{t+1, h}]})P(X_{t})}{P(\boldsymbol{X}_{t})P(\boldsymbol{X}_{t, [X_{t, h}=X_{t+1, h}]})}\right) \\
+&= \mathrm{min}(1, 1) \\
+&= 1.
+\end{aligned}</script><p>所以，对于每一个时刻$t$所作的选择，Gibbs采样都不做拒绝地将其作为样本保留下来。</p>
+<blockquote>
+<h2 id="Gibbs采样"><a href="#Gibbs采样" class="headerlink" title="Gibbs采样  "></a><strong>Gibbs采样</strong>  </h2><p>初始状态为$\boldsymbol{x}_{0}$, t时刻状态的分布为$\boldsymbol{x}_{t}$。<br>通过如下流程采样样本$\boldsymbol{x}_{t+1}$:</p>
+<ol>
+<li>均匀的从$[d]$中选取一个维度$h$。</li>
+<li>计算$q(\boldsymbol{X}_{t+1} \mid \boldsymbol{X}_{t})= \frac{P(\boldsymbol{X}_{t, [X_{t, h}=X_{t, h}]})}{P(\boldsymbol{X}_{t, -h})}$</li>
+<li>通过$q(\boldsymbol{X}_{t+1} \mid \boldsymbol{X}_{t})$采样第$h$维的一个状态$x_{t+1, h}$。</li>
+<li>$x_{t+1} \gets \boldsymbol x_{t, [x_{t, h}=x_{t+1, h}]}$。</li>
+</ol>
+</blockquote>
+<p>最后一步，是将第$d$维的数据替换成新采样的状态。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
+<span class="token keyword">import</span> math
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> beta
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> norm
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token keyword">from</span> mpl_toolkits<span class="token punctuation">.</span>mplot3d <span class="token keyword">import</span> Axes3D
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> multivariate_normal
+
+samplesource <span class="token operator">=</span> multivariate_normal<span class="token punctuation">(</span>mean<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> cov<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">p_ygivenx</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> m1<span class="token punctuation">,</span> m2<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>random<span class="token punctuation">.</span>normalvariate<span class="token punctuation">(</span>m2 <span class="token operator">+</span> rho <span class="token operator">*</span> s2 <span class="token operator">/</span> s1 <span class="token operator">*</span> <span class="token punctuation">(</span>x <span class="token operator">-</span> m1<span class="token punctuation">)</span><span class="token punctuation">,</span> math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> rho <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> s2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">p_xgiveny</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span> m1<span class="token punctuation">,</span> m2<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>random<span class="token punctuation">.</span>normalvariate<span class="token punctuation">(</span>m1 <span class="token operator">+</span> rho <span class="token operator">*</span> s1 <span class="token operator">/</span> s2 <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> m2<span class="token punctuation">)</span><span class="token punctuation">,</span> math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> rho <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> s1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+N <span class="token operator">=</span> <span class="token number">5000</span>
+K <span class="token operator">=</span> <span class="token number">20</span>
+x_res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+y_res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+z_res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+m1 <span class="token operator">=</span> <span class="token number">5</span>
+m2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+s1 <span class="token operator">=</span> <span class="token number">1</span>
+s2 <span class="token operator">=</span> <span class="token number">2</span>
+
+rho <span class="token operator">=</span> <span class="token number">0.5</span>
+y <span class="token operator">=</span> m2
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>K<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> p_xgiveny<span class="token punctuation">(</span>y<span class="token punctuation">,</span> m1<span class="token punctuation">,</span> m2<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span>   <span class="token comment">#y给定得到x的采样</span>
+        y <span class="token operator">=</span> p_ygivenx<span class="token punctuation">(</span>x<span class="token punctuation">,</span> m1<span class="token punctuation">,</span> m2<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span>   <span class="token comment">#x给定得到y的采样</span>
+        z <span class="token operator">=</span> samplesource<span class="token punctuation">.</span>pdf<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        x_res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        y_res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+        z_res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>z<span class="token punctuation">)</span>
+
+num_bins <span class="token operator">=</span> <span class="token number">50</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x_res<span class="token punctuation">,</span> norm<span class="token punctuation">.</span>pdf<span class="token punctuation">(</span>x_res<span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> scale<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'Target Distribution x'</span><span class="token punctuation">,</span> c<span class="token operator">=</span> <span class="token string">'green'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>y_res<span class="token punctuation">,</span> norm<span class="token punctuation">.</span>pdf<span class="token punctuation">(</span>y_res<span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> scale<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'Target Distribution y'</span><span class="token punctuation">,</span> c<span class="token operator">=</span> <span class="token string">'orange'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x_res<span class="token punctuation">,</span> num_bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> facecolor<span class="token operator">=</span><span class="token string">'Cyan'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'x'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>y_res<span class="token punctuation">,</span> num_bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> facecolor<span class="token operator">=</span><span class="token string">'magenta'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'y'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Histogram'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<!-- ### 退火模拟
+
+假设我们现在有个想要取得最大的价值函数$f(bm{x})$，其中$\boldsymbol{x}$是$d$维的变量。
+在退火模拟的算法中，存在一个温度上限$T > 0$， 使得对于任意$0<\tau < T$， 都有
+$$
+p_{\tau}(\boldsymbol{x})=\frac{e^{\frac{f(\boldsymbol{x})}{\tau}}}{\sum_{\boldsymbol{x}}e^{\frac{f(\boldsymbol{x})}{\tau}}}.
+$$
+假设最大值点是唯一的，那么当$\tau→0$
+时，$p_{\tau}(\boldsymbol{x})$
+就会退化为one hot分布，也就是只有最大值点的概率为1，如果从$p_{\tau}(\boldsymbol{x})$中采样，那么采样结果就是最大值点了。
+同时，$\tau > 0$时，那么依然是最大值点的概率最大，所以从$p_{\tau}(\boldsymbol{x})$采样，也会有趋于最大值点的趋势。
+所以，我们可以先固定温度$\tau$，构造一个从$p_{\tau}(\boldsymbol{x})$进行MH采样的随机过程，然后再慢慢让$\tau$下降，那么最终的收敛结果就是最大值点附近了，这就是所谓的“模拟退火”了。
+ -->
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://spaces.ac.cn/archives/8084">https://spaces.ac.cn/archives/8084</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/253784711">https://zhuanlan.zhihu.com/p/253784711</a></li>
+<li>Chatgpt</li>
+</ol>
 
                 
             </div>
