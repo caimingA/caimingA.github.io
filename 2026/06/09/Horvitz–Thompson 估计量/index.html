@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Horvitz–Thompson估计量, CM&#39;s SPACE">
-    <meta name="description" content="简述对于某一个一维随机变量$X$，我们让它的观测$\bm{x} = \{x_{1}, x_{2}, \dots, x_{N}\}$为总体。接下来，我们对$X$的这$n$个数据进行等概率随机抽样，获取大小为$n$的样本，记作：$\bm{y}:">
+    <meta name="description" content="简述对于某一个一维随机变量$X$，我们让它的观测$\boldsymbol{x} = \{x_{1}, x_{2}, \dots, x_{N}\}$为总体。接下来，我们对$X$的这$n$个数据进行等概率随机抽样，获取大小为$n$的样本，记作：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -40,10 +40,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/58.jpg); */ 
+       /* background-image: url(/medias/featureimages/49.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/58.jpg); */
+       /* background-image: url(/medias/featureimages/49.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -505,29 +505,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>对于某一个一维随机变量$X$，我们让它的观测$\bm{x} = \{x_{1}, x_{2}, \dots, x_{N}\}$为总体。<br>接下来，我们对$X$的这$n$个数据进行等概率随机抽样，获取大小为$n$的样本，记作：$\bm{y}:=\{y_{1}, y_{2}, \dots, y_{n}\}$。</p>
+                <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>对于某一个一维随机变量$X$，我们让它的观测$\boldsymbol{x} = \{x_{1}, x_{2}, \dots, x_{N}\}$为总体。<br>接下来，我们对$X$的这$n$个数据进行等概率随机抽样，获取大小为$n$的样本，记作：$\boldsymbol{y}:=\{y_{1}, y_{2}, \dots, y_{n}\}$。</p>
 <p>我们一般通过抽样数据对总体进行估计。<br>例如我们要估计总体的均值我们一般，如下操作：</p>
-<script type="math/tex; mode=display">\hat{\bar{y}} := \frac{\sum_{i:y_{i} \in \bm{y}}y_{i}}{n}.</script><p>但实际操作中，我们抽取的样本可能被选择的概率并不均等，或者有数据缺失的情况。<br>比如，极端情况下我们只能采样$y_{1}$或者$y_{1}$总被采样。<br>这种情况，总体的估计会完全受$y_{1}$影响而导致很高的标准误。</p>
+<script type="math/tex; mode=display">\hat{\bar{y}} := \frac{\sum_{i:y_{i} \in \boldsymbol{y}}y_{i}}{n}.</script><p>但实际操作中，我们抽取的样本可能被选择的概率并不均等，或者有数据缺失的情况。<br>比如，极端情况下我们只能采样$y_{1}$或者$y_{1}$总被采样。<br>这种情况，总体的估计会完全受$y_{1}$影响而导致很高的标准误。</p>
 <p>面对这个情况，我们需要用到Horvitz–Thompson估计量，通过加权对每个样本进行修正。</p>
 <h1 id="估计量"><a href="#估计量" class="headerlink" title="估计量"></a>估计量</h1><script type="math/tex; mode=display">
-\hat{\bar{y}}_{HT} = \frac{1}{N}\sum_{i:y_{i} \in \bm{y}}\frac{y_{i}}{\pi_{i}},</script><p>其中$\pi_{i}$是$y_{i}$属于被抽样群体的概率(注意这里只写了$y_{i}$，实际上对于没被取样的样本也有对应的概率)。<br>注意，这里均值除的是总体的数量$N$，而不是样本的数量$n$。<br>我们将$\frac{1}{\pi_{i}}$看作$y_{i}$的权重的话，我们会得到</p>
+\hat{\bar{y}}_{HT} = \frac{1}{N}\sum_{i:y_{i} \in \boldsymbol{y}}\frac{y_{i}}{\pi_{i}},</script><p>其中$\pi_{i}$是$y_{i}$属于被抽样群体的概率(注意这里只写了$y_{i}$，实际上对于没被取样的样本也有对应的概率)。<br>注意，这里均值除的是总体的数量$N$，而不是样本的数量$n$。<br>我们将$\frac{1}{\pi_{i}}$看作$y_{i}$的权重的话，我们会得到</p>
 <script type="math/tex; mode=display">
-\hat{\bar{y}}_{HT} = \frac{1}{N}\sum_{i:y_{i} \in \bm{y}}w_{i}y_{i},</script><p>这里，我们定义$w_{i}:=\frac{1}{\pi_{i}}$。<br>所以，这个定义方式也叫做逆概率加权。</p>
+\hat{\bar{y}}_{HT} = \frac{1}{N}\sum_{i:y_{i} \in \boldsymbol{y}}w_{i}y_{i},</script><p>这里，我们定义$w_{i}:=\frac{1}{\pi_{i}}$。<br>所以，这个定义方式也叫做逆概率加权。</p>
 <h1 id="无偏估计"><a href="#无偏估计" class="headerlink" title="无偏估计"></a>无偏估计</h1><p>在进行逆概率加权之后，我们对样本进行了改变，此时加权后的样本能正确估计总体吗？</p>
 <p>通过对估计量的期望值进行计算，</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \mathbb{E}[\hat{\bar{y}}_{HT}] 
-&= \mathbb{E}[\frac{1}{N}\sum_{i:y_{i} \in \bm{y}}\frac{y_{i}}{\pi_{i}}] \\
-&= \mathbb{E}[\frac{1}{N}\sum_{j:x_{j} \in \bm{x}}\frac{x_{i}}{\pi_{j}} \delta(x_{i} \in \bm{y})] \\
-&=\frac{1}{N}\sum_{j:x_{j} \in \bm{x}}\frac{x_{i}}{\pi_{j}} \mathbb{E}[\delta(x_{j} \in \bm{y})] \\
-&=\frac{1}{N}\sum_{j:x_{j} \in \bm{x}}\frac{x_{i}}{\pi_{j}} \pi_{j} \\
-&= \frac{1}{N}\sum_{j:x_{j} \in \bm{x}}x_{i}\\
+&= \mathbb{E}[\frac{1}{N}\sum_{i:y_{i} \in \boldsymbol{y}}\frac{y_{i}}{\pi_{i}}] \\
+&= \mathbb{E}[\frac{1}{N}\sum_{j:x_{j} \in \boldsymbol{x}}\frac{x_{i}}{\pi_{j}} \delta(x_{i} \in \boldsymbol{y})] \\
+&=\frac{1}{N}\sum_{j:x_{j} \in \boldsymbol{x}}\frac{x_{i}}{\pi_{j}} \mathbb{E}[\delta(x_{j} \in \boldsymbol{y})] \\
+&=\frac{1}{N}\sum_{j:x_{j} \in \boldsymbol{x}}\frac{x_{i}}{\pi_{j}} \pi_{j} \\
+&= \frac{1}{N}\sum_{j:x_{j} \in \boldsymbol{x}}x_{i}\\
 &= \mathbb{E}[X].
-\end{aligned}</script><h1 id="分层采样"><a href="#分层采样" class="headerlink" title="分层采样"></a>分层采样</h1><p>我们对数据进行分割，记作，$U_{1}, U_{2}, \dots, U_{H}$，使得$U_{1}\cup U_{2}\cup \dots\cup U_{H} = \bm{x}$且$U_{i}\cap U_{j}= \emptyset$ for any $(U_{i}, U_{j})$。<br>如果我们对每一个区块都采样$n_{h}$的话，<br>对于来自不同的区块区块的样本，逆概率加权所需的概率为</p>
+\end{aligned}</script><h1 id="分层采样"><a href="#分层采样" class="headerlink" title="分层采样"></a>分层采样</h1><p>我们对数据进行分割，记作，$U_{1}, U_{2}, \dots, U_{H}$，使得$U_{1}\cup U_{2}\cup \dots\cup U_{H} = \boldsymbol{x}$且$U_{i}\cap U_{j}= \emptyset$ for any $(U_{i}, U_{j})$。<br>如果我们对每一个区块都采样$n_{h}$的话，<br>对于来自不同的区块区块的样本，逆概率加权所需的概率为</p>
 <script type="math/tex; mode=display">
-\pi_{i} = \frac{n_{h}}{\vert U_{i} \vert}, \text{for all } i \in [H].</script><!-- $p: \bigwedge_{x \in \bm{U}}P(x)$  -->
-<!-- $\big(\bigwedge_{x \in \bm{U}}P(x)\big) \wedge \big(\bigvee_{a \in \bm{U}} \neg P(a) \big)$  -->
+\pi_{i} = \frac{n_{h}}{\vert U_{i} \vert}, \text{for all } i \in [H].</script><!-- $p: \bigwedge_{x \in \boldsymbol{U}}P(x)$  -->
+<!-- $\big(\bigwedge_{x \in \boldsymbol{U}}P(x)\big) \wedge \big(\bigvee_{a \in \boldsymbol{U}} \neg P(a) \big)$  -->
                 
             </div>
             <hr/>
