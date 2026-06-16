@@ -8,7 +8,7 @@
       <link href="/2026/06/16/EM%E7%AE%97%E6%B3%95/"/>
       <url>/2026/06/16/EM%E7%AE%97%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇博客简单介绍期望最大化（Expectation-Maximization，EM）算法。<br>其实很喜欢一些有些年头的算法，名字简明易了。<br>EM算法便是代表，算法主要迭代Expectation和Maximization两个环节，最后求解模型的MLE或者MAP。<br>EM算法主要是为了解决所要构建的似然函数或者后验分布中存在隐变量而无法简单获得的问题。</p><p>在正式开始前，我想到我的指导老师评价EM算法为“我们当时读博时，谁都了解的算法”。</p><h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1>]]></content>
       
       
       <categories>
