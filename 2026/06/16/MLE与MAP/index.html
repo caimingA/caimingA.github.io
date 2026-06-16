@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="MLE与MAP, CM&#39;s SPACE">
-    <meta name="description" content="">
+    <meta name="description" content="前言这篇博客中，我主要想复习一下极大似然估计(maximum likelihood estimation, MLE)和最大后验估计(maximum a posteriori estimation, MAP)。
+MLE似然函数假设我么现在有一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -40,10 +41,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/6.jpg); */ 
+       /* background-image: url(/medias/featureimages/58.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/6.jpg); */
+       /* background-image: url(/medias/featureimages/58.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -509,7 +510,105 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇博客中，我主要想复习一下极大似然估计(maximum likelihood estimation, MLE)和最大后验估计(maximum a posteriori estimation, MAP)。</p>
+<h1 id="MLE"><a href="#MLE" class="headerlink" title="MLE"></a>MLE</h1><h2 id="似然函数"><a href="#似然函数" class="headerlink" title="似然函数"></a>似然函数</h2><p>假设我么现在有一个随机变量$X$的pdf或者分布律$P(X\mid \theta)$，其中$\theta$是$X$的分布所需要的参数。</p>
+<p>对于一个服从泊松分布的随机变量$X\sim \mathrm{Po}(\lambda)$，$\theta$为$\lambda$。对于一个服从高斯分布的随机变量$X \sim \mathcal{N}(\mu, \sigma^{2})$，$\theta$就是一个参数向量$[\mu, \sigma^{2}]^{\top}$。</p>
+<p>对$P(X \mid \theta)$，我们可以看作，当给定参数$\theta$之后，$X$的取值函数。<br>更进一步，$P(X \mid \theta)$表示，当给定参数$\theta$之后，$X$的取值$x$出现的可能性。</p>
+<p>如果我们不拘泥于概率密度函数，而是更一般的函数$f(x)$，我们会发现将参数和变量分开的写法很有一般性。<br>比如说，我们考虑一个线性函数</p>
+<script type="math/tex; mode=display">f(x) = \beta_{0} + \beta_{1}x,</script><p>这里可以仿照概率函数的写法写作</p>
+<script type="math/tex; mode=display">f(x \mid \boldsymbol{B} = [\beta_0, \beta_{1}]^{\top}).</script><p>相当于，给定$\beta_{0}$和$\beta_{1}$之后，根据$x$的取值，得到对应的函数值。</p>
+<p>接下来我们回到$P(X \mid \theta)$。我们目前已知讨论的固定$\theta$，改变$X$的取值。但实际上$P(X \mid \theta)$是一个由$X=x$和$\theta$共同构成的函数。<br>例如，对于高斯分布$\mathcal{N}(\mu, \sigma^{2})$，我们有</p>
+<script type="math/tex; mode=display">
+P(X=x \mid [\mu, \sigma^{2}]^{\top}) = \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp{\left(-\frac{1}{2}\cdot\frac{(x-\mu)^{2}}{\sigma^{2}}\right)}.</script><p>对于上面这个pdf，我们写作</p>
+<script type="math/tex; mode=display">
+P(x, \mu, \sigma^{2})</script><p>其实也未尝不可。</p>
+<p>此时，我们从$X$里抽一个样本$x_{1}$，代入$P(x, \mu, \sigma^{2})$，并把该函数想象成关于$\mu$和$\sigma^{2}$的函数，<br>我们有</p>
+<script type="math/tex; mode=display">
+P(x, \mu, \sigma^{2}) = L\left([\mu, \sigma^{2}]^{\top} \mid x_{1}\right).</script><p>这里的$L\left([\mu, \sigma^{2}]^{\top} \mid x_{1}\right)$，可以看作给定$X=x_{1}$时，$[\mu, \sigma^{2}]^{\top}$对这个观测值的支持程度。<br>我们一般称呼它为<strong>似然函数</strong>。<br>注意这里我们没有用可能性或者概率去描述和称呼，这是因为当$x_{1}$被给定之后，对所有的可能的$[\mu, \sigma^{2}]^{\top}$求积分得到的结果可能不为$1$。</p>
+<p>举个例子，为了方便，我们假设高斯分布的$\mu$已知，然后给定$X = x_{1}$之后，我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(\sigma^{2} \mid x_{1}, \mu) &= \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp{\left(-\frac{1}{2}\cdot\frac{(x_1-\mu)^{2}}{\sigma^{2}}\right)}.
+\end{aligned}</script><p>然后我们在$\sigma\in [0, +\infty )$上求积分。<br>先令$a = x_{1} - \mu$，我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_{0}^{+\infty } L(\sigma^{2} \mid x_{1}, \mu) d\sigma &= \int_{0}^{+\infty } \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp{\left(-\frac{a^{2}}{2\sigma^{2}}\right)} d\sigma \\
+&= \frac{1}{\sqrt{2\pi}} \int_{0}^{+\infty } \frac{1}{\sigma}\exp{\left(-\frac{a^{2}}{2\sigma^{2}}\right)} d\sigma
+\end{aligned}</script><p>我们发现，</p>
+<script type="math/tex; mode=display">
+\lim_{\sigma\to +\infty } \exp{\left( -\frac{a^{2}}{2\sigma^{2}}\right)} = 1</script><p>这意味着存在一个$M$，当$\sigma &gt; M$的时候，</p>
+<script type="math/tex; mode=display">
+\exp{\left( -\frac{a^{2}}{2\sigma^{2}}\right)} > \frac{1}{2}.</script><p>所以我们有</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{2\pi}} \int_{M}^{+\infty } \frac{1}{\sigma}\exp{\left(-\frac{a^{2}}{2\sigma^{2}}\right)} d\sigma > \frac{1}{2\sqrt{2\pi}} \int_{M}^{+\infty } \frac{1}{\sigma} d\sigma = + \infty</script><p>对于$\sigma \in [0, M]$的部分，积分值一定大于$0$。<br>结合起来我们有</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{2\pi}} \int_{0}^{+\infty } \frac{1}{\sigma}\exp{\left(-\frac{a^{2}}{2\sigma^{2}}\right)} d\sigma = + \infty .</script><p>所以我们可以说明$L(\sigma^{2} \mid x_{1}, \mu)$不满足归一化公理，自然也就不是一个概率。</p>
+<p>但也有可以归一化的情况，<br>假设高斯分布的$\sigma^{2}$已知，然后给定$X = x_{1}$之后，我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(\mu \mid x_{1}, \sigma^{2}) &= \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp{\left(-\frac{1}{2}\cdot\frac{(x_1-\mu)^{2}}{\sigma^{2}}\right)}.
+\end{aligned}</script><p>然后我们在$\mu\in \mathbb{R}$上求积分</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_{\mathbb{R}} L(\mu \mid x_{1}, \sigma^{2}) d\mu &= \int_{\mathbb{R}} \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp{\left(-\frac{1}{2}\cdot\frac{(x_1-\mu)^{2}}{\sigma^{2}}\right)} d\mu \\
+&\overset{t=x_{1}-\mu}{=} \frac{1}{\sqrt{2\pi\sigma^{2}}}\int_{+\infty }^{-\infty }\exp{\left(-\frac{1}{2}\cdot\frac{t^{2}}{\sigma^{2}}\right)} (-dt) \\
+&= \frac{1}{\sqrt{2\pi\sigma^{2}}}\int_{\mathbb{R}} \exp{\left(-\frac{1}{2}\cdot\frac{t^{2}}{\sigma^{2}}\right)} dt 
+\end{aligned}</script><p>对于$\int_{\mathbb{R}}\exp{\left(-\frac{1}{2}\cdot\frac{t^{2}}{\sigma^{2}}\right)} dt$，<br>我们先求</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& \quad \int_{\mathbb{R}}\int_{\mathbb{R}} \exp{\left( -\frac{t_{1}^{2}}{2\sigma^{2}}\right)}\exp{\left( -\frac{t_{2}^{2}}{2\sigma^{2}}\right)}\, dt_{1}dt_{2} \\
+&= \int_{\mathbb{R}}\int_{\mathbb{R}} \exp{\left( -\frac{t_{1}^{2}+t^{2}_{2}}{2\sigma^{2}}\right)}\, dt_{1}dt_{2} \\
+&= \int_{0}^{2\pi}d\theta\int_{0}^{+\infty } r \cdot\exp{\left( - \frac{r^{2}}{2\sigma^{2}} \right)}\, dr \\
+&= 2\pi\cdot (-\sigma^{2}) \int_{0}^{+\infty }  \exp{\left( - \frac{r^{2}}{2\sigma^{2}} \right)} \, d\left(-\frac{r^{2}}{2\sigma^{2}}\right) \\
+&= -2\pi\sigma^{2} \exp{\left( - \frac{r^{2}}{2\sigma^{2}} \right)} \Bigg\vert^{+\infty }_{0} \\
+&= 2\pi\sigma^{2}
+\end{aligned}</script><p>所以有</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}}\exp{\left(-\frac{1}{2}\cdot\frac{t^{2}}{\sigma^{2}}\right)} dt = \sqrt{2\pi\sigma^{2}}</script><p>将结果代回$\int_{\mathbb{R}} L(\mu \mid x_{1}, \sigma^{2}) d\mu$之后，得到</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}} L(\mu \mid x_{1}, \sigma^{2}) d\mu = \frac{1}{\sqrt{2\pi\sigma^{2}}}\sqrt{2\pi\sigma^{2}} = 1.</script><p>不拘泥于高斯分布，我么可以用</p>
+<script type="math/tex; mode=display">
+L\left(\theta \mid x_{1}\right)</script><p>来表示<strong>似然函数</strong>。</p>
+<h2 id="极大似然"><a href="#极大似然" class="headerlink" title="极大似然"></a>极大似然</h2><p>回到MLE的话题上，当我们有似然函数$L\left(\theta \mid x_{1}\right)$之后，我们可以找到使$L\left(\theta \mid x_{1}\right)$最大的$\theta^{<em>}$，也就是对$x_1$这个观测值的支持程度达到最大。<br>此时，我们认为给定$x_{1}$的时候，$\theta^{</em>}$是最优的估计值。</p>
+<p>我们换一个角度来直觉上的理解支持程度达到最大这个表述。<br>我们之前有讨论过$L\left(\theta \mid x_{1}\right)$也许并不满足归一化，所以不能直接称作概率。<br>但是如果我们将似然函数改造为</p>
+<script type="math/tex; mode=display">
+\widetilde{L}\left(\theta \mid x_{1}\right) = \frac{L\left(\theta \mid x_{1}\right)}{\int_{\theta}L\left(\theta \mid x_{1}\right) d\theta},</script><p>我们会得到形式上相似的参数的密度函数。<br><!-- 强行进行归一化的话（如果能归一化的话），就获得了一个给定$x_{1}$时候，使概率密度函数$\widetilde{L}\left(\theta \mid x_{1}\right)$最大的$\theta$。 --><br>利用这个函数，我们的$\theta^{*}$应该为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\theta^{*} &= \arg \max_{\theta} \widetilde{L}\left(\theta \mid x_{1}\right) \\
+&= \arg \max_{\theta} \frac{L\left(\theta \mid x_{1}\right)}{\int_{\theta}L\left(\theta \mid x_{1}\right) d\theta} \\
+&= \arg \max_{\theta} L\left(\theta \mid x_{1}\right).
+\end{aligned}</script><p>最后一步的推导主要是因为$\int_{\theta}L\left(\theta \mid x_{1}\right)d\theta$是与$\theta$无关的一个值，所以有</p>
+<script type="math/tex; mode=display">
+L\left(\theta \mid x_{1}\right) \propto \frac{L\left(\theta \mid x_{1}\right)}{\int_{\theta}L\left(\theta \mid x_{1}\right) d\theta}.</script><p>但需要注意的是，$\widetilde{L}\left(\theta \mid x_{1}\right)$并不是我们接下来要讲的后验分布，</p>
+<p>在做统计估计的时候，当只有一个样本的时候，估计很可能是不准确的，所以我们要大量采样。<br>假设我们进行独立随机采样得到的样本为$\boldsymbol{x}=\{x_{i}\}_{N}$。<br>给定每一个样本我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\left\{L\left(\theta \mid x_{i}\right)\right\}_{N}.
+\end{aligned}</script><p>进一步因为是随机采样，我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L\left(\theta \mid \boldsymbol{x}\right) &= L\left(\theta \mid \{x_{1}, x_{2}, \dots, x_{N}\}\right) \\
+&=\prod_{i}^{N} L\left(\theta \mid x_{i}\right).
+\end{aligned}</script><p>连乘的计算很多时候并不方便，我们可以通过引入一个单增的log函数来进行转化。<br>最后$\theta^{*}$的估计可以写作</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\widehat{\theta}^{*} &= \arg \max_{\theta} \log\left( L\left(\theta \mid \boldsymbol{x}\right)\right)\\
+&= \arg \max_{\theta} \log \left(\prod_{i}^{N} L\left(\theta \mid x_{i}\right) \right)\\
+&= \arg \max_{\theta} \sum_{i}^{N}\log \left(L(\theta\mid x_{i})\right).
+\end{aligned}</script><h1 id="MAP"><a href="#MAP" class="headerlink" title="MAP"></a>MAP</h1><p>接下来我们讲一下最大后验。<br>假设我们现在有一组采样数据$\boldsymbol{x}$，我们像估计这组数据背后的分布的参数$\theta$。</p>
+<p>在MLE中我们直接使用似然函数$L\left(\theta \mid \boldsymbol{x}\right)$来进行估计。<br>我们对$\theta$的估计完全根据数据$\boldsymbol{x}$。<br>但如果我们对$\theta$其实并不是完全无知呢？<br>比如说，我捡到一个硬币，我可能会很先入为主的认为如果我抛掷这枚硬币的话，得到正面的概率为$\frac{1}{2}$。<br>如果用MLE的话，接下来我会大量抛硬币然后进行参数估计。注意到在这个过程中，我先入为主的猜测并不会影响MLE的估计。<br>我想知道我先入为主的猜测是否可以影响估计参数。<br>如果猜测很准的话，可能对参数估计有极大帮助。如果猜测的不准的话，也没关系，后面大量实验会帮我修正我的猜测。</p>
+<p>将我们的猜测引入参数估计的一种方法便是极大后验估计。<br>我们先引入贝叶斯公式</p>
+<script type="math/tex; mode=display">
+P(\theta \mid \boldsymbol{x}) = \frac{P(\boldsymbol{x} \mid \theta)P(\theta)}{P(\boldsymbol{x})} = \frac{L(\theta \mid \boldsymbol{x})P(\theta)}{P(\boldsymbol{x})}，</script><p>其中，我的猜测便是$P(\theta)$，我们一般把这个分布称为先验分布，或者我更喜欢信念（belief）这个名字。<br>$P(\boldsymbol{x}\mid \theta)$变为之前介绍过的似然函数。$P(\boldsymbol{x})$是$\boldsymbol{x}$的概率分布，或者叫作边际似然。<br>最后，$P(\theta \mid \boldsymbol{x})$被叫做引入信念之后的$\theta$的后验分布。</p>
+<p>最大后验顾名思义就是通过</p>
+<script type="math/tex; mode=display">
+\theta^{*}=\arg \max_{\theta} P(\theta \mid \boldsymbol{x})= \arg \max_{\theta} \frac{P(\boldsymbol{x} \mid \theta)P(\theta)}{P(\boldsymbol{x})},</script><p>其中$P(\boldsymbol{x})$是一个与$\theta$无关的分布，如在MLE中讲的相似，可以认为$P(\boldsymbol{x})$起到一个归一化的作用。<br>所以，</p>
+<script type="math/tex; mode=display">
+\theta^{*}=\arg \max_{\theta} P(\boldsymbol{x} \mid \theta)P(\theta).</script><p>同样的，$\boldsymbol{x}$是随机独立采样而来的，因此，</p>
+<script type="math/tex; mode=display">
+\theta^{*}=\arg \max_{\theta} P(\theta)\prod_{i}^{N} P(x_{i} \mid \theta) = \arg \max_{\theta} P(\theta) \left(\prod_{i}^{N} L\left(\theta \mid x_{i}\right)\right).</script><p>可以看到，比起MLE，MAP的优化函数中多了$P(\theta)$的部分。<br>注意，似然函数和信念都是我们事先假设的。</p>
+
                 
             </div>
             <hr/>
