@@ -6,7 +6,7 @@
   <link href="http://caiminga.github.io/atom.xml" rel="self"/>
   
   <link href="http://caiminga.github.io/"/>
-  <updated>2026-06-16T10:11:55.702Z</updated>
+  <updated>2026-06-17T11:00:18.669Z</updated>
   <id>http://caiminga.github.io/</id>
   
   <author>
@@ -21,14 +21,17 @@
     <link href="http://caiminga.github.io/2026/06/16/EM%E7%AE%97%E6%B3%95/"/>
     <id>http://caiminga.github.io/2026/06/16/EM%E7%AE%97%E6%B3%95/</id>
     <published>2026-06-15T17:17:37.000Z</published>
-    <updated>2026-06-16T10:11:55.702Z</updated>
+    <updated>2026-06-17T11:00:18.669Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;这篇博客简单介绍期望最大化（Expectation-Maximization，EM）算法。
+其实很喜欢一些有些年头的算法，名字简明易了。
+EM算法便是代表，算法主要迭代Expectation和Maximization两个环节，最后求解模型的MLE或者</summary>
         
       
     
@@ -50,14 +53,17 @@
     <link href="http://caiminga.github.io/2026/06/16/MLE%E4%B8%8EMAP/"/>
     <id>http://caiminga.github.io/2026/06/16/MLE%E4%B8%8EMAP/</id>
     <published>2026-06-15T17:11:37.000Z</published>
-    <updated>2026-06-16T08:33:19.617Z</updated>
+    <updated>2026-06-17T10:22:18.478Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;这篇博客中，我主要想复习一下极大似然估计(maximum likelihood estimation,</summary>
+    <summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;这篇博客中，我主要想复习一下极大似然估计(maximum likelihood estimation, MLE)和最大后验估计(maximum a posteriori estimation, MAP)。&lt;/p&gt;
+&lt;h1&gt;MLE&lt;/h1&gt;
+&lt;h2</summary>
         
       
     
@@ -86,7 +92,9 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;很对模型都会默认一个很基本的假设：噪声是服从高斯分布的（高斯分布也叫做常态分布，这是更好理解的。反而是正态分布z这个名字让人疑惑）。&lt;/p&gt;
+&lt;p&gt;如果一个随机变量&lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
         
       
     
@@ -113,7 +121,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;对于某一个一维随机变量$X$，我们让它的观测$\boldsymbol{x} = \{x_{1}, x_{2}, \dots,</summary>
+    <summary type="html">&lt;h1&gt;简述&lt;/h1&gt;
+&lt;p&gt;对于某一个一维随机变量&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
         
       
     
@@ -129,6 +138,27 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://caiminga.github.io/2026/04/14/hello-world/"/>
+    <id>http://caiminga.github.io/2026/04/14/hello-world/</id>
+    <published>2026-04-14T11:19:36.105Z</published>
+    <updated>2021-12-22T14:03:10.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Bootstrap</title>
     <link href="http://caiminga.github.io/2025/09/17/Bootstrap/"/>
     <id>http://caiminga.github.io/2025/09/17/Bootstrap/</id>
@@ -140,7 +170,10 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1&gt;简述&lt;/h1&gt;
+&lt;p&gt;这里写一些对于bootstrap的理解。
+在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。&lt;/p&gt;
+&lt;p&gt;如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线性</summary>
         
       
     
@@ -160,15 +193,18 @@
     <link href="http://caiminga.github.io/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/"/>
     <id>http://caiminga.github.io/2025/09/17/%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E8%A7%A3%E9%87%8A/</id>
     <published>2025-09-17T02:48:51.000Z</published>
-    <updated>2025-09-17T09:07:16.477Z</updated>
+    <updated>2025-09-17T09:07:18.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;这里主要对一些我经常遇到的专业名词进行记录&lt;/p&gt;
-&lt;h1 id=&quot;概率统计&quot;&gt;&lt;a href=&quot;#概率统计&quot;</summary>
+    <summary type="html">&lt;h1&gt;简述&lt;/h1&gt;
+&lt;p&gt;这里主要对一些我经常遇到的专业名词进行记录&lt;/p&gt;
+&lt;h1&gt;概率统计&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;随机变量（Random</summary>
         
       
     
@@ -195,8 +231,10 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;这里记录一些有关于中心极限定理的结论和推导&lt;/p&gt;
-&lt;h1 id=&quot;中心极限定理的简单理解&quot;&gt;&lt;a href=&quot;#中心极限定理的简单理解&quot;</summary>
+    <summary type="html">&lt;h1&gt;简述&lt;/h1&gt;
+&lt;p&gt;这里记录一些有关于中心极限定理的结论和推导&lt;/p&gt;
+&lt;h1&gt;中心极限定理的简单理解&lt;/h1&gt;
+&lt;p&gt;中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取&lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
         
       
     
@@ -216,14 +254,16 @@
     <link href="http://caiminga.github.io/2025/06/06/Assumptions-for-Causal-Discovery/"/>
     <id>http://caiminga.github.io/2025/06/06/Assumptions-for-Causal-Discovery/</id>
     <published>2025-06-06T11:58:27.000Z</published>
-    <updated>2025-09-17T03:41:25.555Z</updated>
+    <updated>2025-09-17T03:41:26.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h2&gt;&lt;p&gt;I will list up some assumptions when a casual</summary>
+    <summary type="html">&lt;h2 id=&quot;Abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;I will list up some assumptions when a casual model is considered here.
+Also, several causal learning</summary>
         
       
     
@@ -245,14 +285,14 @@
     <link href="http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/"/>
     <id>http://caiminga.github.io/2022/11/05/SIR%E6%A8%A1%E5%9E%8B/</id>
     <published>2022-11-05T09:57:37.000Z</published>
-    <updated>2022-11-05T11:28:34.502Z</updated>
+    <updated>2022-11-05T11:28:36.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2</summary>
         
       
     
@@ -272,15 +312,17 @@
     <link href="http://caiminga.github.io/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
     <id>http://caiminga.github.io/2022/11/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</id>
     <published>2022-11-05T09:57:15.000Z</published>
-    <updated>2022-11-05T10:28:55.318Z</updated>
+    <updated>2022-11-05T10:28:56.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h2&gt;&lt;p&gt;这篇博文主要将一些微分方程的解法记录在这里，会持续更新。&lt;/p&gt;
-&lt;h2 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;简述&lt;/h2&gt;
+&lt;p&gt;这篇博文主要将一些微分方程的解法记录在这里，会持续更新。&lt;/p&gt;
+&lt;h2 id=&quot;一&quot;&gt;一&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
         
       
     
@@ -300,14 +342,15 @@
     <link href="http://caiminga.github.io/2022/11/03/%E7%8E%B0%E4%BB%A3%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
     <id>http://caiminga.github.io/2022/11/03/%E7%8E%B0%E4%BB%A3%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/</id>
     <published>2022-11-03T10:39:57.000Z</published>
-    <updated>2022-11-05T08:20:58.742Z</updated>
+    <updated>2022-11-05T08:21:00.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h2&gt;&lt;p&gt;本笔记主要参考B站up主&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;简述&lt;/h2&gt;
+&lt;p&gt;本笔记主要参考B站up主&lt;a</summary>
         
       
     
@@ -329,15 +372,17 @@
     <link href="http://caiminga.github.io/2022/10/31/%E3%82%8F%E3%81%91/"/>
     <id>http://caiminga.github.io/2022/10/31/%E3%82%8F%E3%81%91/</id>
     <published>2022-10-31T13:27:49.000Z</published>
-    <updated>2022-10-31T14:05:33.166Z</updated>
+    <updated>2022-10-31T14:05:34.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;在日语学习过程中总是遇到&lt;strong&gt;わけ&lt;/strong&gt;。这篇博文主要对わけ进行一些总结。会持续更新。&lt;/p&gt;
-&lt;h1</summary>
+    <summary type="html">&lt;h1&gt;简述&lt;/h1&gt;
+&lt;p&gt;在日语学习过程中总是遇到&lt;strong&gt;わけ&lt;/strong&gt;。这篇博文主要对わけ进行一些总结。会持续更新。&lt;/p&gt;
+&lt;h1&gt;わけだ&lt;/h1&gt;
+&lt;p&gt;普通形(原型) +</summary>
         
       
     
@@ -359,15 +404,17 @@
     <link href="http://caiminga.github.io/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
     <id>http://caiminga.github.io/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</id>
     <published>2022-10-31T11:47:10.000Z</published>
-    <updated>2022-10-31T13:42:59.940Z</updated>
+    <updated>2022-10-31T13:43:00.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。&lt;/p&gt;
-&lt;h2 id=&quot;第一章-导论&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h1&gt;简述&lt;/h1&gt;
+&lt;p&gt;这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。&lt;/p&gt;
+&lt;h2 id=&quot;第一章-导论&quot;&gt;第一章 导论&lt;/h2&gt;
+&lt;h3</summary>
         
       
     
@@ -387,14 +434,14 @@
     <link href="http://caiminga.github.io/2022/09/22/%E3%81%A6%E3%81%84%E3%82%8B%E3%81%A8%E3%81%A6%E3%81%82%E3%82%8B%E3%81%A8%E3%81%A6%E3%81%8A%E3%81%8F/"/>
     <id>http://caiminga.github.io/2022/09/22/%E3%81%A6%E3%81%84%E3%82%8B%E3%81%A8%E3%81%A6%E3%81%82%E3%82%8B%E3%81%A8%E3%81%A6%E3%81%8A%E3%81%8F/</id>
     <published>2022-09-22T06:09:49.000Z</published>
-    <updated>2022-10-31T14:05:34.798Z</updated>
+    <updated>2022-10-31T14:05:36.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;ている&quot;&gt;&lt;a href=&quot;#ている&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2</summary>
         
       
     
@@ -416,14 +463,16 @@
     <link href="http://caiminga.github.io/2022/06/18/%E5%80%9F%E3%82%8A%E3%82%8B%E3%81%A8%E8%B2%B8%E3%81%99/"/>
     <id>http://caiminga.github.io/2022/06/18/%E5%80%9F%E3%82%8A%E3%82%8B%E3%81%A8%E8%B2%B8%E3%81%99/</id>
     <published>2022-06-18T05:05:09.000Z</published>
-    <updated>2022-10-31T13:51:21.691Z</updated>
+    <updated>2022-10-31T13:51:22.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;简述&lt;/h2&gt;
+&lt;p&gt;「借りると貸す」都是借的意思，但接的方向有些不一样。「借りる」是借入「貸す」是借出。但学日语很久了，仍然不会很有把握在第一时间把这两个词用对。所以，想记录一下最近想到的奇妙记忆法。&lt;/p&gt;
+&lt;h2</summary>
         
       
     
@@ -445,14 +494,14 @@
     <link href="http://caiminga.github.io/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/"/>
     <id>http://caiminga.github.io/2022/06/18/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9B%B8%E5%85%B3%E7%BB%93%E8%AE%BA/</id>
     <published>2022-06-17T22:16:33.000Z</published>
-    <updated>2022-06-17T23:07:38.825Z</updated>
+    <updated>2022-06-17T23:07:40.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重$w=(X^{T}X)^{-1}X^{T}y$。其中$X$为输入数据或者说明变量，$y$是输出结果或者被说明变量。需要注意的是，最小二乘是凸函数。为了求出最小二乘的极值，可以进行求导并找到导</summary>
+    <summary type="html">&lt;p&gt;在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
         
       
     
@@ -470,14 +519,17 @@
     <link href="http://caiminga.github.io/2022/06/18/monte-carlo/"/>
     <id>http://caiminga.github.io/2022/06/18/monte-carlo/</id>
     <published>2022-06-17T15:16:08.000Z</published>
-    <updated>2026-06-15T17:22:59.419Z</updated>
+    <updated>2026-06-17T10:54:05.118Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;简述&quot;&gt;简述&lt;/h2&gt;
+&lt;p&gt;蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。&lt;/p&gt;
+&lt;p&gt;另外蒙特卡罗并不是人的名字，而是位于摩纳哥的一个赌场的名字。&lt;/p&gt;
+&lt;h2</summary>
         
       
     
@@ -499,7 +551,7 @@
     <link href="http://caiminga.github.io/2021/12/23/first-article/"/>
     <id>http://caiminga.github.io/2021/12/23/first-article/</id>
     <published>2021-12-22T15:03:49.000Z</published>
-    <updated>2022-10-31T13:25:04.756Z</updated>
+    <updated>2022-10-31T13:25:06.000Z</updated>
     
     
       
@@ -517,27 +569,6 @@
     
     
     <category term="daily life" scheme="http://caiminga.github.io/tags/daily-life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://caiminga.github.io/2021/12/22/hello-world/"/>
-    <id>http://caiminga.github.io/2021/12/22/hello-world/</id>
-    <published>2021-12-22T14:03:08.383Z</published>
-    <updated>2021-12-22T14:03:08.383Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

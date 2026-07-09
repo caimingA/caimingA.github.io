@@ -5,11 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="统计学笔记, CM&#39;s SPACE">
-    <meta name="description" content="简述这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。
-第一章 导论数据类型的分类其中顺序数据也可以归属于分类数据中，数值数据则可以进一步分为离散数据和连续数据。
+    <meta name="description" content="简述
+这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。
+第一章 导论
+数据类型的分类
+其中顺序数据也可以归属于分类数据中，数值数据则可以进一步分为离散数据和连续数据。
 
 统计中的几个基本概念
-总体：所研究的">
+
+总体：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,8 +36,10 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/katex-custom.css">
 
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CM's SPACE" type="application/atom+xml">
 </head>
 
@@ -44,10 +50,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/9.jpg); */ 
+       /* background-image: url(/medias/featureimages/22.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/9.jpg); */
+       /* background-image: url(/medias/featureimages/22.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -509,16 +515,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。</p>
-<h2 id="第一章-导论"><a href="#第一章-导论" class="headerlink" title="第一章 导论"></a>第一章 导论</h2><h3 id="数据类型的分类"><a href="#数据类型的分类" class="headerlink" title="数据类型的分类"></a>数据类型的分类</h3><p>其中顺序数据也可以归属于分类数据中，数值数据则可以进一步分为离散数据和连续数据。</p>
-<p><img src="/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/chapter1/统计数据的分类.png" alt="fig1 例子"></p>
-<h3 id="统计中的几个基本概念"><a href="#统计中的几个基本概念" class="headerlink" title="统计中的几个基本概念"></a>统计中的几个基本概念</h3><ol>
+                <h1>简述</h1>
+<p>这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。</p>
+<h2 id="第一章-导论">第一章 导论</h2>
+<h3 id="数据类型的分类">数据类型的分类</h3>
+<p>其中顺序数据也可以归属于分类数据中，数值数据则可以进一步分为离散数据和连续数据。</p>
+<p><img src="/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/chapter1/%E7%BB%9F%E8%AE%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%86%E7%B1%BB.png" alt="fig1 例子"></p>
+<h3 id="统计中的几个基本概念">统计中的几个基本概念</h3>
+<ol>
 <li>总体：所研究的全部个体的集合</li>
 <li>样本：从总体中抽出一部分组成的集合</li>
 <li>参数：描述总体特征的数字度量</li>
-<li>统计量：描述样本特征的数字度量<br><img src="/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/chapter1/总体和样本，参数和统计量.png" alt="fig2 例子"></li>
+<li>统计量：描述样本特征的数字度量
+<img src="/2022/10/31/%E7%BB%9F%E8%AE%A1%E5%AD%A6/chapter1/%E6%80%BB%E4%BD%93%E5%92%8C%E6%A0%B7%E6%9C%AC%EF%BC%8C%E5%8F%82%E6%95%B0%E5%92%8C%E7%BB%9F%E8%AE%A1%E9%87%8F.png" alt="fig2 例子"></li>
 </ol>
-<h2 id="第二章-数据的收集"><a href="#第二章-数据的收集" class="headerlink" title="第二章 数据的收集"></a>第二章 数据的收集</h2>
+<h2 id="第二章-数据的收集">第二章 数据的收集</h2>
+
                 
             </div>
             <hr/>
@@ -1394,6 +1406,14 @@ $(function () {
             // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
+        
+            <!-- <script src='https://unpkg.com/mermaid@v8.13.3/dist/mermaid.min.js'></script> -->
+            <script src='/libs/mermaid/mermaid.min.js'></script>
+            <script>
+            if (window.mermaid) {
+                mermaid.initialize({theme: 'forest'});
+            }
+            </script>
         
 
         

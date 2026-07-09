@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Assumptions for Causal Discovery, CM&#39;s SPACE">
-    <meta name="description" content="AbstractI will list up some assumptions when a casual model is considered here.Also, several causal learning method corr">
+    <meta name="description" content="Abstract
+I will list up some assumptions when a casual model is considered here.
+Also, several causal learning method co">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,8 +30,10 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/katex-custom.css">
 
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CM's SPACE" type="application/atom+xml">
 </head>
 
@@ -40,10 +44,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/9.jpg); */ 
+       /* background-image: url(/medias/featureimages/22.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/9.jpg); */
+       /* background-image: url(/medias/featureimages/22.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -509,22 +513,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>I will list up some assumptions when a casual model is considered here.<br>Also, several causal learning method corresoponding to mentioned assumptions will be introduced.</p>
-<h1 id="Markov-assumption"><a href="#Markov-assumption" class="headerlink" title="Markov assumption"></a>Markov assumption</h1><p>$X_{i}$ is an observational varibale.<br>$X_{i} \perp X_{j} \mid Pa(X_{i})$, where $X_{i}$ is a non-descendant of $X_{i}$ and $Pa(X_{i})$ represent the set of parents of $X_{i}$.</p>
-<h1 id="Faithfulness-assumption"><a href="#Faithfulness-assumption" class="headerlink" title="Faithfulness assumption"></a>Faithfulness assumption</h1><p>Let $I(G)$ and $I(P)$ be the set of independence relations in a casual graph, and the set of independence relations in the correponding distribution.<br>If $I(G) = I(P)$, then we say that the graph $G$ is faithful to the distribution $P$.</p>
-<h1 id="LiNGAM-asssumption"><a href="#LiNGAM-asssumption" class="headerlink" title="LiNGAM asssumption"></a>LiNGAM asssumption</h1><ul>
+                <h2 id="Abstract">Abstract</h2>
+<p>I will list up some assumptions when a casual model is considered here.
+Also, several causal learning method corresoponding to mentioned assumptions will be introduced.</p>
+<h1>Markov assumption</h1>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is an observational varibale.
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>⊥</mo><msub><mi>X</mi><mi>j</mi></msub><mo>∣</mo><mi>P</mi><mi>a</mi><mo stretchy="false">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X_{i} \perp X_{j} \mid Pa(X_{i})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is a non-descendant of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>a</mi><mo stretchy="false">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Pa(X_{i})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> represent the set of parents of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p>
+<h1>Faithfulness assumption</h1>
+<p>Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I(G)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mopen">(</span><span class="mord mathnormal">G</span><span class="mclose">)</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo stretchy="false">(</mo><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I(P)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span></span></span></span> be the set of independence relations in a casual graph, and the set of independence relations in the correponding distribution.
+If <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo><mo>=</mo><mi>I</mi><mo stretchy="false">(</mo><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I(G) = I(P)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mopen">(</span><span class="mord mathnormal">G</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span></span></span></span>, then we say that the graph <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">G</span></span></span></span> is faithful to the distribution <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span>.</p>
+<h1>LiNGAM asssumption</h1>
+<ul>
 <li>The causal effects are linear.</li>
 <li>The distributions of disturbance terms (noise terms) are non-Gaussian.</li>
-<li>The distributions are continuous. </li>
+<li>The distributions are continuous.</li>
 <li>Exogenous variables are mutually independent.</li>
 </ul>
-<h1 id="Sufficiency"><a href="#Sufficiency" class="headerlink" title="Sufficiency"></a>Sufficiency</h1><p>All varibales in a causal system have been observed.</p>
-<h1 id="Measurement-assumption"><a href="#Measurement-assumption" class="headerlink" title="Measurement assumption"></a>Measurement assumption</h1><p>There is no observed variable who is an ancestor of a latent variable.</p>
-<h1 id="canonical-LvLiNGAM"><a href="#canonical-LvLiNGAM" class="headerlink" title="canonical LvLiNGAM"></a>canonical LvLiNGAM</h1><ul>
+<h1>Sufficiency</h1>
+<p>All varibales in a causal system have been observed.</p>
+<h1>Measurement assumption</h1>
+<p>There is no observed variable who is an ancestor of a latent variable.</p>
+<h1>canonical LvLiNGAM</h1>
+<ul>
 <li>LiNGAM</li>
 <li>All latent variables are mutually independent.</li>
 </ul>
-<h1 id="purity-assumption"><a href="#purity-assumption" class="headerlink" title="purity assumption"></a>purity assumption</h1><p>There is no directed path (ancestral relationship) between a pair of observed variables.</p>
+<h1>purity assumption</h1>
+<p>There is no directed path (ancestral relationship) between a pair of observed variables.</p>
 
                 
             </div>
@@ -1397,6 +1412,14 @@ $(function () {
             // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
+        
+            <!-- <script src='https://unpkg.com/mermaid@v8.13.3/dist/mermaid.min.js'></script> -->
+            <script src='/libs/mermaid/mermaid.min.js'></script>
+            <script>
+            if (window.mermaid) {
+                mermaid.initialize({theme: 'forest'});
+            }
+            </script>
         
 
         

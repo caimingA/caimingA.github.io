@@ -1,1 +1,54 @@
 /* Here is your custom css styles. */
+/* 全局正文字体 */
+/* body,
+p,
+li, */
+
+.post-content,
+.article-content,
+.card-content {
+    font-family:
+        "Noto Serif SC",
+        "Source Han Serif SC",
+        "Songti SC",
+        "SimSun",
+        "Noto Serif JP",
+        "Yu Mincho",
+        serif;
+    font-size: 14.5px;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+}
+.post-content,
+.article-content,
+.article-content p,
+.article-content li,
+.article-content blockquote {
+  color: #000000 !important;
+}
+/* 标题字体 */
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.toc-title,
+.card-title {
+  font-family:
+    "Segoe UI", "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-weight: 700;
+}
+
+/* 代码字体 */
+code,
+pre,
+kbd,
+samp,
+.highlight,
+.line,
+.gutter {
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    "Cascadia Code",
+    "Consolas",
+    monospace !important;
+}

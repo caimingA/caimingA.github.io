@@ -28,8 +28,10 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/katex-custom.css">
 
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CM's SPACE" type="application/atom+xml">
 </head>
 
@@ -40,10 +42,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/9.jpg); */ 
+       /* background-image: url(/medias/featureimages/22.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/9.jpg); */
+       /* background-image: url(/medias/featureimages/22.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -393,19 +395,10 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/daily-life/" title="daily life: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="daily life" style="background-color: #F9EBEA;">daily life
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/math/" title="math: 13">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="math" style="background-color: #F5EEF8;">math
+                            data-tagname="math" style="background-color: #F9EBEA;">math
                         <span class="tag-length">13</span>
                     </span>
                 </a>
@@ -414,7 +407,7 @@
                 <a href="/tags/RL/" title="RL: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="RL" style="background-color: #D5F5E3;">RL
+                            data-tagname="RL" style="background-color: #F5EEF8;">RL
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -423,35 +416,8 @@
                 <a href="/tags/ML/" title="ML: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="ML" style="background-color: #E8F8F5;">ML
+                            data-tagname="ML" style="background-color: #D5F5E3;">ML
                         <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/japanese/" title="japanese: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="japanese" style="background-color: #FEF9E7;">japanese
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/language/" title="language: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="language" style="background-color: #F8F9F9;">language
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/words/" title="words: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="words" style="background-color: #82E0AA;">words
-                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -459,16 +425,16 @@
                 <a href="/tags/statistic/" title="statistic: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="statistic" style="background-color: #D7BDE2;">statistic
+                            data-tagname="statistic" style="background-color: #E8F8F5;">statistic
                         <span class="tag-length">8</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/grammar/" title="grammar: 1">
+                <a href="/tags/daily-life/" title="daily life: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="grammar" style="background-color: #A3E4D7;">grammar
+                            data-tagname="daily life" style="background-color: #FEF9E7;">daily life
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -477,7 +443,43 @@
                 <a href="/tags/CS/" title="CS: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="CS" style="background-color: #85C1E9;">CS
+                            data-tagname="CS" style="background-color: #F8F9F9;">CS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/japanese/" title="japanese: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="japanese" style="background-color: #82E0AA;">japanese
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/language/" title="language: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="language" style="background-color: #D7BDE2;">language
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/words/" title="words: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="words" style="background-color: #A3E4D7;">words
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/grammar/" title="grammar: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="grammar" style="background-color: #85C1E9;">grammar
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -785,6 +787,14 @@ $(function () {
             // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
+        
+            <!-- <script src='https://unpkg.com/mermaid@v8.13.3/dist/mermaid.min.js'></script> -->
+            <script src='/libs/mermaid/mermaid.min.js'></script>
+            <script>
+            if (window.mermaid) {
+                mermaid.initialize({theme: 'forest'});
+            }
+            </script>
         
 
         

@@ -1,0 +1,24 @@
+.katex {
+  font-size: 1.08em;
+  line-height: 1.35;
+  color: #111111;
+}
+
+/* Display equations */
+.katex-display {
+  margin: 1.2em 0;
+  padding: 0.2em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Make display equations slightly larger than inline equations */
+.katex-display > .katex {
+  font-size: 1.12em;
+}
+
+/* Dark mode, if your theme has dark mode */
+body.dark .katex,
+.dark .katex {
+  color: #eeeeee !important;
+}

@@ -28,8 +28,10 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/katex-custom.css">
 
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CM's SPACE" type="application/atom+xml">
 </head>
 
@@ -40,10 +42,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/9.jpg); */ 
+       /* background-image: url(/medias/featureimages/22.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/9.jpg); */
+       /* background-image: url(/medias/featureimages/22.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -394,10 +396,10 @@
                 
                 
                 
-                <a href="/categories/other/" title="other: 1">
+                <a href="/categories/research/" title="research: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">other
+                            style="background-color: #F9EBEA;">research
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -412,28 +414,10 @@
                 </a>
                 
                 
-                <a href="/categories/japanese/" title="japanese: 4">
+                <a href="/categories/other/" title="other: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">japanese
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/computer-science/" title="computer science: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">computer science
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/research/" title="research: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FEF9E7;">research
+                            style="background-color: #D5F5E3;">other
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -442,8 +426,26 @@
                 <a href="/categories/machine-learning/" title="machine learning: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">machine learning
+                            style="background-color: #E8F8F5;">machine learning
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/computer-science/" title="computer science: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">computer science
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/japanese/" title="japanese: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">japanese
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
@@ -473,8 +475,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                前言这篇博客中，我主要想复习一下极大似然估计(maximum likelihood estimation, MLE)和最大后验估计(maximum a posteriori estimation, MAP)。
-MLE似然函数假设我么现在有一
+                                前言
+这篇博客中，我主要想复习一下极大似然估计(maximum likelihood estimation, MLE)和最大后验估计(maximum a posteriori estimation, MAP)。
+MLE
+似然函数
+假设我么现
                             
                         </div>
                         <div class="publish-info">
@@ -528,8 +533,9 @@ MLE似然函数假设我么现在有一
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                前言很对模型都会默认一个很基本的假设：噪声是服从高斯分布的（高斯分布也叫做常态分布，这是更好理解的。反而是正态分布z这个名字让人疑惑）。
-如果一个随机变量$X$服从高斯分布，即$X \sim \mathcal{N}(\mu, \sigma^
+                                前言
+很对模型都会默认一个很基本的假设：噪声是服从高斯分布的（高斯分布也叫做常态分布，这是更好理解的。反而是正态分布z这个名字让人疑惑）。
+如果一个随机变量XXX服从高斯分布，即X∼N(μ,σ2)X \sim \mathcal{N}(\mu
                             
                         </div>
                         <div class="publish-info">
@@ -579,7 +585,9 @@ MLE似然函数假设我么现在有一
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述对于某一个一维随机变量$X$，我们让它的观测$\boldsymbol{x} = \{x_{1}, x_{2}, \dots, x_{N}\}$为总体。接下来，我们对$X$的这$n$个数据进行等概率随机抽样，获取大小为$n$的样本，记作：
+                                简述
+对于某一个一维随机变量XXX，我们让它的观测x={x1,x2,…,xN}\boldsymbol{x} = \{x_{1}, x_{2}, \dots, x_{N}\}x={x1​,x2​,…,xN​}为总体。
+接下来，我们对XXX的这
                             
                         </div>
                         <div class="publish-info">
@@ -629,8 +637,10 @@ MLE似然函数假设我么现在有一
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述这里写一些对于bootstrap的理解。在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。
-如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线性相
+                                简述
+这里写一些对于bootstrap的理解。
+在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。
+如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线
                             
                         </div>
                         <div class="publish-info">
@@ -680,10 +690,14 @@ MLE似然函数假设我么现在有一
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述这里主要对一些我经常遇到的专业名词进行记录
+                                简述
+这里主要对一些我经常遇到的专业名词进行记录
 概率统计
-随机变量（Random Variable）定义：一个在实验或观测前无法确定其取值，只能通过概率分布来描述的变量。
-类型：离散型：如掷骰子的结果 $X \in \{1, 2, 3, 4
+
+随机变量（Random Variable）
+定义：一个在实验或观测前无法确定其取值，只能通过概率分布来描述的变量。
+类型：
+离散型：如掷骰子的结果 X∈{1,2,3,4,5,6}
                             
                         </div>
                         <div class="publish-info">
@@ -733,9 +747,11 @@ MLE似然函数假设我么现在有一
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述这里记录一些有关于中心极限定理的结论和推导
-中心极限定理的简单理解中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取$n$个抽样，一共抽$m$次。然后把这$m$组抽样分别求出平均值。 这些平均值的分布接近正态分布。
-N
+                                简述
+这里记录一些有关于中心极限定理的结论和推导
+中心极限定理的简单理解
+中心极限定理指的是给定一个任意分布的总体。我每次从这些总体中随机抽取nnn个抽样，一共抽mmm次。
+然后把这mmm组抽样分别求出平均值。 这些平均值的分布接近正态分布
                             
                         </div>
                         <div class="publish-info">
@@ -785,9 +801,10 @@ N
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述这篇博文主要将一些微分方程的解法记录在这里，会持续更新。
-一$v(t) = exp(At)v(0)$是微分方程$\frac{d}{dt}v(t) = Av(t)$的解。
-其中$A$是矩阵，当然也可以是一个常数。$v(0)$是$v$的初始
+                                简述
+这篇博文主要将一些微分方程的解法记录在这里，会持续更新。
+一
+v(t)=exp(At)v(0)v(t) = exp(At)v(0)v(t)=exp(At)v(0)是微分方程ddtv(t)=Av(t)\frac{d}{dt}v(t) =
                             
                         </div>
                         <div class="publish-info">
@@ -837,11 +854,15 @@ N
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。
-第一章 导论数据类型的分类其中顺序数据也可以归属于分类数据中，数值数据则可以进一步分为离散数据和连续数据。
+                                简述
+这篇博文中主要对统计学进行简单的梳理。使用的教材是贾俊平老师编著的《统计学（第八版）》。
+第一章 导论
+数据类型的分类
+其中顺序数据也可以归属于分类数据中，数值数据则可以进一步分为离散数据和连续数据。
 
 统计中的几个基本概念
-总体：所研究的
+
+总体：
                             
                         </div>
                         <div class="publish-info">
@@ -891,7 +912,7 @@ N
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重$w=(X^{T}X)^{-1}X^{T}y$。其中$X$为输入数据或者说明变量，$y$是输出结果或者被说明变量。需要注意的是，最小二乘是凸函数。为了求出最
+                                在线性回归中，损失函数一般被定义为最小二乘。在不考虑正则项的前提下，我们可以推出权重w=(XTX)−1XTyw=(X^{T}X)^{-1}X^{T}yw=(XTX)−1XTy。其中XXX为输入数据或者说明变量，yyy是输出结果或者被说明变量
                             
                         </div>
                         <div class="publish-info">
@@ -937,10 +958,12 @@ N
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。
+                                简述
+蒙特卡罗方法是一种用多次取样来逐渐逼近样本真实分布的方法。
 另外蒙特卡罗并不是人的名字，而是位于摩纳哥的一个赌场的名字。
-简单的例子最经典的例子应该是几何概型中的算$\pi$的数值。也就是高中课本上的撒豆子问题。
-通过多次随机取样，取样
+简单的例子
+最经典的例子应该是几何概型中的算π\piπ的数值。也就是高中课本上的撒豆子问题。
+通过多次随机取样，
                             
                         </div>
                         <div class="publish-info">
@@ -1200,6 +1223,14 @@ $(function () {
             // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
+        
+            <!-- <script src='https://unpkg.com/mermaid@v8.13.3/dist/mermaid.min.js'></script> -->
+            <script src='/libs/mermaid/mermaid.min.js'></script>
+            <script>
+            if (window.mermaid) {
+                mermaid.initialize({theme: 'forest'});
+            }
+            </script>
         
 
         

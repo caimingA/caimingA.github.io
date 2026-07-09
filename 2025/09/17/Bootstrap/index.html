@@ -5,8 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Bootstrap, CM&#39;s SPACE">
-    <meta name="description" content="简述这里写一些对于bootstrap的理解。在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。
-如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线性相">
+    <meta name="description" content="简述
+这里写一些对于bootstrap的理解。
+在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。
+如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,8 +31,10 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/katex-custom.css">
 
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CM's SPACE" type="application/atom+xml">
 </head>
 
@@ -41,10 +45,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/9.jpg); */ 
+       /* background-image: url(/medias/featureimages/22.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/9.jpg); */
+       /* background-image: url(/medias/featureimages/22.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -506,15 +510,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>这里写一些对于bootstrap的理解。<br>在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。</p>
+                <h1>简述</h1>
+<p>这里写一些对于bootstrap的理解。
+在进行线性回归的时候，我经常遇到的问题是，我不知道回归出来的系数是否显著不为0。</p>
 <p>如果只有二元随机变量的时候，我们可以借助HSIC之类的方法进行独立性检测。如果两个变量相互独立，那他俩必然不线性相关。当然，在假定随机变量是非高斯的时候，这个命题的逆命题一般并不成立。</p>
 <p>我们也可以通过Wald Test来对回归出来的参数进行假说检验。当然，我们需要知道我们估计的这个参数的标准误差。</p>
-<p>除了上述方法，bootstrap也是一种简单且神奇的方法。<br>这里写一些对于bootstrap的理解。</p>
-<h1 id="概念图"><a href="#概念图" class="headerlink" title="概念图"></a>概念图</h1><p><img src="/2025/09/17/Bootstrap/bootstrap.png" alt="fig1 bootstrap的概念图"><br>这里的“Aggregation”也可以被认为是“Bagging”。</p>
-<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><ol>
-<li>Bootstrap 重采样：进行$B$次有放回的采样，每次采样的大小一般默认与原样本的大小一致。用每一采集到的样本进行参数估计。</li>
-<li>构造置信区间：上一步中会得到的$B$个估计值。根据给定的显著水平（比如说，$\alpha = 0.05$），得到$\alpha / 2$和$1-(\alpha - 2)$分位点的估计值（双尾检验）。</li>
-<li>判断是否显著：如果我们原假设的参数值（比如说，$H_{0}:\quad \theta = 0$）落入到了上一步骤求得两个分位点数据所构成的区间（置信区间）里面，则不拒绝原假设。反之，拒绝原假设。</li>
+<p>除了上述方法，bootstrap也是一种简单且神奇的方法。
+这里写一些对于bootstrap的理解。</p>
+<h1>概念图</h1>
+<p><img src="/2025/09/17/Bootstrap/bootstrap.png" alt="fig1 bootstrap的概念图">
+这里的“Aggregation”也可以被认为是“Bagging”。</p>
+<h1>流程</h1>
+<ol>
+<li>Bootstrap 重采样：进行<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span>次有放回的采样，每次采样的大小一般默认与原样本的大小一致。用每一采集到的样本进行参数估计。</li>
+<li>构造置信区间：上一步中会得到的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span>个估计值。根据给定的显著水平（比如说，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.05</span></span></span></span>），得到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\alpha / 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mord">/2</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mo stretchy="false">(</mo><mi>α</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1-(\alpha - 2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span>分位点的估计值（双尾检验）。</li>
+<li>判断是否显著：如果我们原假设的参数值（比如说，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mspace width="1em"><mi>θ</mi><mo>=</mo><mn>0</mn></mspace></mrow><annotation encoding="application/x-tex">H_{0}:\quad \theta = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>）落入到了上一步骤求得两个分位点数据所构成的区间（置信区间）里面，则不拒绝原假设。反之，拒绝原假设。</li>
 </ol>
 <p>Note：这里的置信区间不对分布进行假设，而是直接用分位点法。</p>
 
@@ -902,13 +912,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2026/06/09/Horvitz%E2%80%93Thompson%20%E4%BC%B0%E8%AE%A1%E9%87%8F/">
+                <a href="/2026/04/14/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/41.jpg" class="responsive-img" alt="Horvitz–Thompson估计量">
+                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Horvitz–Thompson估计量</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -919,31 +929,15 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-06-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-04-14
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/math-basic/" class="post-category">
-                                    math basic
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            CAI Ming
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/math/">
-                        <span class="chip bg-color">math</span>
-                    </a>
-                    
-                    <a href="/tags/statistic/">
-                        <span class="chip bg-color">statistic</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1385,6 +1379,14 @@ $(function () {
             // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
+        
+            <!-- <script src='https://unpkg.com/mermaid@v8.13.3/dist/mermaid.min.js'></script> -->
+            <script src='/libs/mermaid/mermaid.min.js'></script>
+            <script>
+            if (window.mermaid) {
+                mermaid.initialize({theme: 'forest'});
+            }
+            </script>
         
 
         

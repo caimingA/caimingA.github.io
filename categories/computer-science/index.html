@@ -28,8 +28,10 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/katex-custom.css">
 
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CM's SPACE" type="application/atom+xml">
 </head>
 
@@ -40,10 +42,10 @@
        /* background-image: url(/medias/featureimages/); */
        /* 
        /*  */
-       /* background-image: url(/medias/featureimages/9.jpg); */ 
+       /* background-image: url(/medias/featureimages/22.jpg); */ 
 
        /* url_for(post.path) */
-       /* background-image: url(/medias/featureimages/9.jpg); */
+       /* background-image: url(/medias/featureimages/22.jpg); */
        background-repeat:no-repeat;
        background-size: 100% 100%;
        /* background-size: cover; */
@@ -394,10 +396,10 @@
                 
                 
                 
-                <a href="/categories/other/" title="other: 1">
+                <a href="/categories/research/" title="research: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">other
+                            style="background-color: #F9EBEA;">research
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -412,28 +414,10 @@
                 </a>
                 
                 
-                <a href="/categories/japanese/" title="japanese: 4">
+                <a href="/categories/other/" title="other: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">japanese
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/computer-science/" title="computer science: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #E8F8F5;">computer science
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/research/" title="research: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FEF9E7;">research
+                            style="background-color: #D5F5E3;">other
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -442,8 +426,26 @@
                 <a href="/categories/machine-learning/" title="machine learning: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">machine learning
+                            style="background-color: #E8F8F5;">machine learning
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/computer-science/" title="computer science: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #FEF9E7;">computer science
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/japanese/" title="japanese: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">japanese
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
@@ -473,7 +475,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简述这学期选了门课，複雑システムのモデル化と問題解決。老师是位很元气的人😂。课程上会介绍应用在不同领域的各种数学模型。按之前的话，这课我可能听一节就跑了，但老师讲的日语实在是太容易听懂了（上课的时候我记的笔记都是在记实用的日语表达方式😂
+                                简述
+这学期选了门课，複雑システムのモデル化と問題解決。老师是位很元气的人😂。课程上会介绍应用在不同领域的各种数学模型。按之前的话，这课我可能听一节就跑了，但老师讲的日语实在是太容易听懂了（上课的时候我记的笔记都是在记实用的日语表达方式�
                             
                         </div>
                         <div class="publish-info">
@@ -729,6 +732,14 @@ $(function () {
             // console.log(parseInt(((new Date().getTime()) % (211 * 10)) / 10))
         </script>
 
+        
+            <!-- <script src='https://unpkg.com/mermaid@v8.13.3/dist/mermaid.min.js'></script> -->
+            <script src='/libs/mermaid/mermaid.min.js'></script>
+            <script>
+            if (window.mermaid) {
+                mermaid.initialize({theme: 'forest'});
+            }
+            </script>
         
 
         
